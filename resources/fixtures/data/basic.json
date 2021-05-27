@@ -1,0 +1,86 @@
+{
+  "title": "Title",
+  "subtitle": "Subtitle",
+  "steps": [
+    {
+      "text": "Text for the first step",
+      "variants": [
+        {
+          "assets": [
+            {
+              "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/05/27/discount-rate-mw-8948538af180ad7f7f9da79ee81a8180-8948538af180ad7f7f9da79ee81a8180.png",
+              "key": "2021/05/27/discount-rate-mw-8948538af180ad7f7f9da79ee81a8180-8948538af180ad7f7f9da79ee81a8180.png",
+              "width": 1053,
+              "height": 1035,
+              "size": 33301,
+              "type": "image/png"
+            }
+          ]
+        },
+        {
+          "minWidth": 500,
+          "assets": [
+            {
+              "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/05/27/discount-rate-cw-0c401c82ab420d54e705d394af1c4794-0c401c82ab420d54e705d394af1c4794.png",
+              "key": "2021/05/27/discount-rate-cw-0c401c82ab420d54e705d394af1c4794-0c401c82ab420d54e705d394af1c4794.png",
+              "width": 1890,
+              "height": 1341,
+              "size": 40139,
+              "type": "image/png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Text for the second step",
+      "variants": [
+        {
+          "assets": [
+            {
+              "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/05/27/discount-rate-mw-8948538af180ad7f7f9da79ee81a8180-8948538af180ad7f7f9da79ee81a8180.png",
+              "key": "2021/05/27/discount-rate-mw-8948538af180ad7f7f9da79ee81a8180-8948538af180ad7f7f9da79ee81a8180.png",
+              "width": 1053,
+              "height": 1035,
+              "size": 33301,
+              "type": "image/png"
+            }
+          ]
+        },
+        {
+          "minWidth": 500,
+          "assets": [
+            {
+              "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/05/27/discount-rate-cw-0c401c82ab420d54e705d394af1c4794-0c401c82ab420d54e705d394af1c4794.png",
+              "key": "2021/05/27/discount-rate-cw-0c401c82ab420d54e705d394af1c4794-0c401c82ab420d54e705d394af1c4794.png",
+              "width": 1890,
+              "height": 1341,
+              "size": 40139,
+              "type": "image/png"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "link": {
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2021/02/TechnicalSupportDocument_SocialCostofCarbonMethaneNitrousOxide.pdf",
+        "isValid": true
+      },
+      "text": "Interagency Working Group on Social Cost of Greenhouse Gases"
+    },
+    {
+      "link": {
+        "url": "https://gwagner.com/",
+        "isValid": true
+      },
+      "text": "Gernot Wagner"
+    }
+  ],
+  "notes": "Anmerkung",
+  "department": "Visuals",
+  "publication": "nzz",
+  "acronym": "mrt."
+}
