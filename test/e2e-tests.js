@@ -157,7 +157,7 @@ lab.experiment("assets", () => {
       },
     });
     const stylesheetRes = await server.inject(
-      `/stylesheet/${res.result.stylesheets[0].name}`
+      `/stylesheet/${res.result.stylesheets[1].name}`
     );
     expect(stylesheetRes.statusCode).to.be.equal(200);
   });

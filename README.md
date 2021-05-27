@@ -1,6 +1,6 @@
-# Q-scroll-graphic <travis-badge>
+# Q-scroll-graphic [![Build Status](https://travis-ci.com/nzzdev/Q-scroll-graphic.svg?branch=main)](https://travis-ci.com/nzzdev/Q-scroll-graphic)
 
-**maintainer**: <maintainer>
+**maintainer**: [manuelroth](https://github.com/manuelroth)
 
 Short description of tool and link to either [demo](https://editor.q.tools/) or [playground](https://q-playground.st.nzz.ch).
 
@@ -86,19 +86,16 @@ There are three options for deployment:
 The tool structure follows the general structure of each Q tool. Further information can be found in [Q server documentation - Developing tools](https://nzzdev.github.io/Q-server/developing-tools.html).
 
 Here are all features listed which will have an impact on the tool but are not options. For example spacing issues. If there's a visual aspect, a printscreen would be nice.
-The printscreen can be implemented as following:
-<img src="/doc/card-layout.png" align="right" width=300 height=355>
 
 [to the top](#table-of-contents)
 
 ### Options
 
 All options should be listed and explained. The varieties should be listed. If there's a visual aspect, a printscreen would be nice. The options should be listed as they are named in the `schema`
-The printscreen can be implemented as following:
-<img src="/doc/card-layout.png" align="right" width=300 height=355>
-
 [to the top](#table-of-contents)
 
-## License (if open source)
+## License
 
-Adding the license + updating the year.
+Copyright (c) Neue Zürcher Zeitung. All rights reserved.
+
+This software is published under the MIT license.
