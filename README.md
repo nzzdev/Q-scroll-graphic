@@ -28,7 +28,11 @@ npm run build
 
 ## Configuration
 
-If env variables, explained here
+There is one env variable `IMAGE_SERVICE_URL` to be defined. It should contain a URL with 3 parameters that will get replaced before the URL is used to load the images.
+`{key}` will be replaced by the string Q-server stored as the key when the file got uploaded through Q-servers `/file` endpoint provided by the [file plugin](https://github.com/nzzdev/Q-server/blob/dev/plugins/file/index.js)
+`{width}` is replaced by the width the image should be loaded
+`{format}` will be `png` or `webp`
+Example: `https://q-images.nzz.ch/{key}?width={width}&format={format}`
 
 ## Development
 
@@ -87,11 +91,6 @@ The tool structure follows the general structure of each Q tool. Further informa
 
 Here are all features listed which will have an impact on the tool but are not options. For example spacing issues. If there's a visual aspect, a printscreen would be nice.
 
-[to the top](#table-of-contents)
-
-### Options
-
-All options should be listed and explained. The varieties should be listed. If there's a visual aspect, a printscreen would be nice. The options should be listed as they are named in the `schema`
 [to the top](#table-of-contents)
 
 ## License
