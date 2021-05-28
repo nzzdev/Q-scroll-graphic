@@ -1,4 +1,4 @@
-# Q-scroll-graphic [![Build Status](https://travis-ci.com/nzzdev/Q-scroll-graphic.svg?branch=main)](https://travis-ci.com/nzzdev/Q-scroll-graphic)
+# Q-scroll-graphic [![Build Status](https://travis-ci.com/nzzdev/Q-scroll-graphic.svg?branch=dev)](https://travis-ci.com/nzzdev/Q-scroll-graphic)
 
 **maintainer**: [manuelroth](https://github.com/manuelroth)
 
