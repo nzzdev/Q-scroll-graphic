@@ -63,6 +63,7 @@ module.exports = {
       id: `q_scroll_graphic_${toolRuntimeConfig.requestId}`,
       displayOptions: request.payload.toolRuntimeConfig.displayOptions || {},
       item: item,
+      imageServiceUrl: process.env.IMAGE_SERVICE_URL,
     };
 
     const staticTemplateRender = staticTemplate.render(context);

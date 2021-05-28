@@ -1,5 +1,5 @@
 <script>
-  import Footer from "./Footer.svelte";
+  import Footer from "./components/Footer.svelte";
 
   export let item;
   export let id;

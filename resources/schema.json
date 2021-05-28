@@ -1,14 +1,126 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "Q-scroll-graphic",
+  "title": "Grafikabfolge",
   "properties": {
     "title": {
       "title": "Titel",
-      "type": "string"
+      "type": "string",
+      "Q:options": {
+        "placeholder": "Der Titel bringt die Kernaussage der Grafik auf den Punkt&#46;"
+      }
     },
     "subtitle": {
       "title": "Untertitel",
+      "type": "string",
+      "Q:options": {
+        "placeholder": "Der Untertitel benennt präzise, was in der Grafik zu sehen ist, inklusive Einheiten&#46;"
+      }
+    },
+    "steps": {
+      "title": "Schritte",
+      "type": "array",
+      "Q:options": {
+        "compact": true,
+        "expandable": {
+          "itemLabelProperty": "text"
+        }
+      },
+      "items": {
+        "title": "Schritt",
+        "type": "object",
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "variants": {
+            "title": "Grafiken",
+            "type": "array",
+            "Q:options": {
+              "compact": true,
+              "expandable": {
+                "itemLabelProperty": "minWidth"
+              }
+            },
+            "items": {
+              "title": "Variante",
+              "type": "object",
+              "properties": {
+                "minWidth": {
+                  "title": "Mindestbreite in px für diese Variante",
+                  "type": "number"
+                },
+                "assets": {
+                  "title": "Grafik",
+                  "type": "array",
+                  "items": {
+                    "title": "Grafik",
+                    "type": "object",
+                    "Q:type": "files",
+                    "Q:options": {
+                      "maxFiles": 1,
+                      "acceptedFiles": "image/*",
+                      "fileProperties": {
+                        "url": "url",
+                        "key": "key",
+                        "width": "width",
+                        "height": "height",
+                        "size": "size",
+                        "type": "type"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "default": [
+              {
+                "assets": [{}]
+              },
+              {
+                "minWidth": 500,
+                "assets": [{}]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "title": "Quelle(n)",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Quelle",
+        "properties": {
+          "text": {
+            "title": "Quelle",
+            "type": "string"
+          },
+          "link": {
+            "Q:type": "link",
+            "title": "Link",
+            "type": "object",
+            "properties": {
+              "url": {
+                "title": "Link",
+                "type": "string",
+                "Q:options": {
+                  "placeholder": "Direktlink zur Quelle, http://&#46;&#46;&#46;"
+                }
+              },
+              "isValid": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "required": ["text"]
+      }
+    },
+    "notes": {
+      "title": "Anmerkungen",
       "type": "string"
     }
   },
