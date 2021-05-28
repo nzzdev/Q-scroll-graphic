@@ -78,9 +78,11 @@
     <section style="height: 20vh; max-height: {maxHeight}px;" />
     <section style="height: 80vh; max-height: {maxHeight}px;" />
     {#each texts as text}
-      <TextBox {maxHeight} {variant}>
-        {@html text}
-      </TextBox>
+      {#if text}
+        <TextBox {maxHeight} {variant}>
+          {@html text}
+        </TextBox>
+      {/if}
     {/each}
   </div>
 </Scroller>
