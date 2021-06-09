@@ -35,7 +35,7 @@
             "type": "string"
           },
           "variants": {
-            "title": "Grafiken",
+            "title": "Varianten",
             "type": "array",
             "Q:options": {
               "compact": true,
@@ -51,24 +51,20 @@
                   "title": "Mindestbreite in px für diese Variante",
                   "type": "number"
                 },
-                "assets": {
+                "asset": {
                   "title": "Grafik",
-                  "type": "array",
-                  "items": {
-                    "title": "Grafik",
-                    "type": "object",
-                    "Q:type": "files",
-                    "Q:options": {
-                      "maxFiles": 1,
-                      "acceptedFiles": "image/*",
-                      "fileProperties": {
-                        "url": "url",
-                        "key": "key",
-                        "width": "width",
-                        "height": "height",
-                        "size": "size",
-                        "type": "type"
-                      }
+                  "type": "object",
+                  "Q:type": "files",
+                  "Q:options": {
+                    "maxFiles": 1,
+                    "acceptedFiles": "image/*",
+                    "fileProperties": {
+                      "url": "url",
+                      "key": "key",
+                      "width": "width",
+                      "height": "height",
+                      "size": "size",
+                      "type": "type"
                     }
                   }
                 }
@@ -76,11 +72,11 @@
             },
             "default": [
               {
-                "assets": [{}]
+                "asset": {}
               },
               {
                 "minWidth": 500,
-                "assets": [{}]
+                "asset": {}
               }
             ]
           }
