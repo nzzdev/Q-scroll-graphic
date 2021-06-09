@@ -16,14 +16,14 @@
       (variant) => !variant.minWidth || variant.minWidth < 500
     );
     if (smallVariant) {
-      images.small.push(smallVariant.assets[0].key);
+      images.small.push(smallVariant.asset.key);
     }
 
     const largeVariant = step.variants.find(
       (variant) => variant.minWidth && variant.minWidth >= 500
     );
     if (largeVariant) {
-      images.large.push(largeVariant.assets[0].key);
+      images.large.push(largeVariant.asset.key);
     }
   });
 
