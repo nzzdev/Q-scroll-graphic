@@ -54,7 +54,6 @@ export default {
     format: "iife",
     name: "window._q_scroll_graphic.ScrollGraphic",
     file: `scripts/${filename}.js`,
-    sourcemap: production ? false : true,
   },
   plugins: [
     svelte(),

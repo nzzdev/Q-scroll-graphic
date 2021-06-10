@@ -2,10 +2,11 @@
   import TextBox from "./TextBox.svelte";
   import Scroller from "./Scroller.svelte";
   import { fade } from "svelte/transition";
+  import { getImageUrls, getPreloadImageUrl } from "./helpers.js";
 
-  export let resolveImage;
+  export let imageServiceUrl;
   export let containerWidth;
-  export let images;
+  export let imageVariants;
   export let texts;
 
   const aspectRatios = {
@@ -17,9 +18,7 @@
   $: variant = containerWidth < 500 ? "small" : "large";
   $: aspectRatio = aspectRatios[variant];
 
-  let index, offset, progress;
-  let windowHeight;
-
+  let index, offset, progress, windowHeight, images;
   const padding = 32;
 
   // Glue to top of page (counting 90px for header) on mobile, center vertically on desktop
@@ -30,20 +29,23 @@
     Math.min(minHeaderSpace, windowHeight / 2 - imageHeight / 2) - padding;
   $: bottom = top + imageHeight + 2 * padding;
 
-  $: imageUrls = images[variant].map((image) =>
-    resolveImage(image, containerWidth)
+  $: images = imageVariants[variant].map((image) =>
+    getImageUrls(image, containerWidth, imageServiceUrl)
   );
-  $: imageUrlsReverse = imageUrls.map((url, id) => ({ id, url })).reverse();
+
+  $: imagesReverse = images.map((image, id) => ({ id, image })).reverse();
 
   let preloadedUntil = -1;
   $: if (index !== undefined) {
     // Always preload the next image, so the loading is usually not visible
-    preloadImagesUntil(imageUrls, index + 1);
+    preloadImagesUntil(images, index + 1);
   }
 
-  function preloadImagesUntil(imageUrls, index) {
+  function preloadImagesUntil(images, index) {
     for (let i = preloadedUntil + 1; i <= index; i += 1) {
-      new Image().src = imageUrls[i];
+      if (images[i]) {
+        new Image().src = getPreloadImageUrl(images[i]);
+      }
     }
     preloadedUntil = Math.max(preloadedUntil, index);
   }
@@ -66,9 +68,23 @@
               Image n+1 is below and becomes visible
               => smooth transition n to n+1
       -->
-      {#each imageUrlsReverse as { id, url }}
-        {#if id === Math.min(index, imageUrlsReverse.length - 1)}
-          <img src={url} alt="Haus" style="padding-top: {padding}px" out:fade />
+      {#each imagesReverse as { id, image }}
+        {#if id === Math.min(index, imagesReverse.length - 1)}
+          <picture>
+            <source
+              type="image/webp"
+              srcset="{image.webp1x} 1x, {image.webp2x} 2x, {image.webp3x} 3x, {image.webp4x} 4x"
+            />
+            <source
+              srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
+            />
+            <img
+              src={image.png1x}
+              alt=""
+              style="padding-top: {padding}px"
+              out:fade
+            />
+          </picture>
         {/if}
       {/each}
     </div>

@@ -6,7 +6,7 @@
 
   let containerWidth;
   const texts = item.steps.map((step) => step.text);
-  const images = {
+  const imageVariants = {
     small: [],
     large: [],
   };
@@ -16,29 +16,25 @@
       (variant) => !variant.minWidth || variant.minWidth < 500
     );
     if (smallVariant) {
-      images.small.push(smallVariant.asset.key);
+      imageVariants.small.push(smallVariant.asset);
     }
 
     const largeVariant = step.variants.find(
       (variant) => variant.minWidth && variant.minWidth >= 500
     );
     if (largeVariant) {
-      images.large.push(largeVariant.asset.key);
+      imageVariants.large.push(largeVariant.asset);
     }
   });
-
-  function resolveImage(key, containerWidth) {
-    let width = 327 * 3;
-    if (containerWidth) {
-      width = containerWidth * 3;
-    }
-    return imageServiceUrl
-      .replace("{key}", key)
-      .replace("{width}", width)
-      .replace("{format}", "webpll");
-  }
 </script>
 
 <div bind:clientWidth={containerWidth}>
-  <ScrollContainer {containerWidth} {resolveImage} {images} {texts} />
+  {#if containerWidth}
+    <ScrollContainer
+      {containerWidth}
+      {imageServiceUrl}
+      {imageVariants}
+      {texts}
+    />
+  {/if}
 </div>
