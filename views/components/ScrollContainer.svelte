@@ -9,14 +9,10 @@
   export let imageVariants;
   export let texts;
 
-  const aspectRatios = {
-    small: 701 / 936,
-    large: 1741 / 957,
-  };
-
   $: maxHeight = 2 * containerWidth;
   $: variant = containerWidth < 500 ? "small" : "large";
-  $: aspectRatio = aspectRatios[variant];
+  $: aspectRatio =
+    imageVariants[variant][0].width / imageVariants[variant][0].height;
 
   let index, offset, progress, windowHeight, images;
   const padding = 32;
