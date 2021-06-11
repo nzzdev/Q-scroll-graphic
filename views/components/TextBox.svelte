@@ -1,6 +1,21 @@
 <script>
+  import { TinyColor } from "@ctrl/tinycolor";
   export let maxHeight;
   export let variant;
+  export let text;
+
+  function parseHightlightedText(text) {
+    // matches text block in the form of [text](backgroundColor)
+    const regex = /\[(?<text>[^\]]+)\]\((?<backgroundColor>[^\)]+)\)/g;
+    return text.replace(regex, (match, text, backgroundColor) => {
+      backgroundColor = new TinyColor(backgroundColor);
+      let textColor = "#ffffff";
+      if (backgroundColor.isValid) {
+        textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+      }
+      return `<span class="q-scroll-graphic-content--hightlighted" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
+    });
+  }
 </script>
 
 <section>
@@ -8,7 +23,7 @@
     <p
       class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
     >
-      <slot />
+      {@html parseHightlightedText(text)}
     </p>
   </div>
   <div class="q-scroll-graphic-spacer" style="max-height: {maxHeight}px" />
@@ -41,15 +56,13 @@
     text-align: center;
   }
 
-  .q-scroll-graphic-spacer {
-    height: 80vh;
-  }
-
-  .q-scroll-graphic-content :global(b) {
+  .q-scroll-graphic-content :global(.q-scroll-graphic-content--hightlighted) {
     font-weight: 100;
-    color: #fff;
-    background: #05032d;
     border-radius: 2px;
     padding: 0px 4px;
+  }
+
+  .q-scroll-graphic-spacer {
+    height: 80vh;
   }
 </style>

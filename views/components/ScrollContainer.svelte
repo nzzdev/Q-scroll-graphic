@@ -91,9 +91,7 @@
     <section style="height: 80vh; max-height: {maxHeight}px;" />
     {#each texts as text}
       {#if text}
-        <TextBox {maxHeight} {variant}>
-          {@html text}
-        </TextBox>
+        <TextBox {maxHeight} {variant} {text} />
       {/if}
     {/each}
   </div>
