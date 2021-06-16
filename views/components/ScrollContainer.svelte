@@ -6,15 +6,28 @@
 
   export let imageServiceUrl;
   export let containerWidth;
-  export let imageVariants;
-  export let texts;
+  export let item;
+
+  $: images = item.steps.map((step) => {
+    // return the image variant where containerWidth is larger or equal to defined minimal width
+    const variant = step.variants
+      .map((variant) => {
+        if (!variant.minWidth) {
+          variant.minWidth = 1;
+        }
+        return variant;
+      })
+      .sort((a, b) => b.minWidth - a.minWidth)
+      .find((variant) => containerWidth >= variant.minWidth);
+
+    return variant.asset;
+  });
 
   $: maxHeight = 2 * containerWidth;
   $: variant = containerWidth < 500 ? "small" : "large";
-  $: aspectRatio =
-    imageVariants[variant][0].width / imageVariants[variant][0].height;
+  $: aspectRatio = images[0].width / images[0].height;
 
-  let index, offset, progress, windowHeight, images;
+  let index, offset, progress, windowHeight;
   const padding = 32;
 
   // Glue to top of page (counting 90px for header) on mobile, center vertically on desktop
@@ -25,22 +38,22 @@
     Math.min(minHeaderSpace, windowHeight / 2 - imageHeight / 2) - padding;
   $: bottom = top + imageHeight + 2 * padding;
 
-  $: images = imageVariants[variant].map((image) =>
+  $: imageUrls = images.map((image) =>
     getImageUrls(image, containerWidth, imageServiceUrl)
   );
 
-  $: imagesReverse = images.map((image, id) => ({ id, image })).reverse();
+  $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
 
   let preloadedUntil = -1;
   $: if (index !== undefined) {
     // Always preload the next image, so the loading is usually not visible
-    preloadImagesUntil(images, index + 1);
+    preloadImagesUntil(imageUrls, index + 1);
   }
 
-  function preloadImagesUntil(images, index) {
+  function preloadImagesUntil(imageUrls, index) {
     for (let i = preloadedUntil + 1; i <= index; i += 1) {
-      if (images[i]) {
-        new Image().src = getPreloadImageUrl(images[i]);
+      if (imageUrls[i]) {
+        new Image().src = getPreloadImageUrl(imageUrls[i]);
       }
     }
     preloadedUntil = Math.max(preloadedUntil, index);
@@ -64,8 +77,8 @@
               Image n+1 is below and becomes visible
               => smooth transition n to n+1
       -->
-      {#each imagesReverse as { id, image }}
-        {#if id === Math.min(index, imagesReverse.length - 1)}
+      {#each imageUrlsReverse as { id, image }}
+        {#if id === Math.min(index, imageUrlsReverse.length - 1)}
           <picture>
             <source
               type="image/webp"
@@ -89,9 +102,9 @@
   <div slot="foreground" class="s-font-text">
     <section style="height: 20vh; max-height: {maxHeight}px;" />
     <section style="height: 80vh; max-height: {maxHeight}px;" />
-    {#each texts as text}
-      {#if text}
-        <TextBox {maxHeight} {variant} {text} />
+    {#each item.steps as step}
+      {#if step.text}
+        <TextBox {maxHeight} {variant} text={step.text} />
       {/if}
     {/each}
   </div>
