@@ -29,7 +29,6 @@
   $: aspectRatio = images[0].width / images[0].height;
 
   let index, offset, progress, windowHeight, threshold, top;
-  const padding = 32;
 
   $: imageHeight = containerWidth / aspectRatio;
   $: {
@@ -43,11 +42,11 @@
       if (verticalCenter < 90) {
         top = 90;
       } else {
-        top = verticalCenter - padding;
+        top = verticalCenter;
       }
     }
   }
-  $: bottom = top + imageHeight + 2 * padding;
+  $: bottom = top + imageHeight;
 
   $: imageUrls = images.map((image) =>
     getImageUrls(image, containerWidth, imageServiceUrl)
@@ -85,7 +84,7 @@
   <div slot="background">
     <div
       class="q-scroll-graphic-background"
-      style="padding-bottom: {imageHeight + padding}px;"
+      style="padding-bottom: {imageHeight}px;"
     >
       <!-- Use images in reverse order, so the z-order is correct automatically:
               Image n is on top and fades out
@@ -102,12 +101,7 @@
             <source
               srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
             />
-            <img
-              src={image.png1x}
-              alt=""
-              style="padding-top: {padding}px;"
-              out:fade
-            />
+            <img src={image.png1x} alt="" out:fade />
           </picture>
         {/if}
       {/each}
