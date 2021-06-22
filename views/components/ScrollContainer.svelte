@@ -119,7 +119,7 @@
     {/if}
     {#each item.steps as step}
       {#if step.text}
-        <TextBox {maxHeight} {variant} text={step.text} />
+        <TextBox {maxHeight} {variant} {step} />
       {/if}
     {/each}
   </div>

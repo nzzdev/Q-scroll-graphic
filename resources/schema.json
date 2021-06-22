@@ -34,6 +34,45 @@
             "title": "Text",
             "type": "string"
           },
+          "highlightTexts": {
+            "title": "Hervorhebung von Text",
+            "type": "array",
+            "Q:options": {
+              "compact": true,
+              "expandable": {
+                "itemLabelProperty": "text"
+              }
+            },
+            "items": {
+              "title": "Hervorhebung",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "title": "Typ",
+                  "type": "string",
+                  "default": "background",
+                  "enum": ["background", "underline", "bold"],
+                  "Q:options": {
+                    "enum_titles": ["Hintergrund", "Unterstrichen", "Fett"]
+                  }
+                },
+                "text": {
+                  "title": "Text",
+                  "type": "string"
+                },
+                "color": {
+                  "title": "Farbe",
+                  "type": "string",
+                  "Q:type": "color"
+                },
+                "preventBreakingToNextLine": {
+                  "title": "Zeilenumbruch verhindern",
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          },
           "variants": {
             "title": "Varianten",
             "type": "array",

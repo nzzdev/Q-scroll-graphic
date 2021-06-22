@@ -2,19 +2,34 @@
   import { TinyColor } from "@ctrl/tinycolor";
   export let maxHeight;
   export let variant;
-  export let text;
+  export let step;
 
-  function parseHightlightedText(text) {
-    // matches text block in the form of [text](backgroundColor)
-    const regex = /\[(?<text>[^\]]+)\]\((?<backgroundColor>[^\)]+)\)/g;
-    return text.replace(regex, (match, text, backgroundColor) => {
-      backgroundColor = new TinyColor(backgroundColor);
-      let textColor = "#ffffff";
-      if (backgroundColor.isValid) {
-        textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+  function getHighlightedText(step) {
+    for (let highlightText of step.highlightTexts) {
+      let textReplacement = "";
+      let text = highlightText.text;
+
+      if (highlightText.preventBreakingToNextLine) {
+        text = text.replace(/ /g, "&nbsp;");
       }
-      return `<span class="q-scroll-graphic-content--hightlighted" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
-    });
+
+      if (highlightText.type === "background") {
+        const backgroundColor = new TinyColor(highlightText.color);
+        let textColor = "#ffffff";
+        if (backgroundColor.isValid) {
+          textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+        }
+        textReplacement = `<span style="font-weight: 100; border-radius: 2px; padding: 0px 4px; background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
+      } else if (highlightText.type === "underline") {
+        textReplacement = `<u style="text-decoration: underline solid ${highlightText.color} 1px;">${text}</u>`;
+      } else if (highlightText.type === "bold") {
+        textReplacement = `<b>${text}</b>`;
+      }
+
+      step.text = step.text.replace(highlightText.text, textReplacement);
+    }
+
+    return step.text;
   }
 </script>
 
@@ -23,7 +38,11 @@
     <p
       class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
     >
-      {@html parseHightlightedText(text)}
+      {#if step.highlightTexts && step.highlightTexts.length > 0}
+        {@html getHighlightedText(step)}
+      {:else}
+        {step.text}
+      {/if}
     </p>
   </div>
   <div class="q-scroll-graphic-spacer" style="max-height: {maxHeight}px" />
@@ -54,12 +73,6 @@
     padding-right: 20px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
-  }
-
-  .q-scroll-graphic-content :global(.q-scroll-graphic-content--hightlighted) {
-    font-weight: 100;
-    border-radius: 2px;
-    padding: 0px 4px;
   }
 
   .q-scroll-graphic-spacer {
