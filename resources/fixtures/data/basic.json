@@ -245,5 +245,8 @@
       "link": {},
       "text": "BFS"
     }
-  ]
+  ],
+  "options": {
+    "firstGraphicChangeAfterSecondText": true
+  }
 }

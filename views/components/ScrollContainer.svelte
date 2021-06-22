@@ -58,12 +58,14 @@
     }
     preloadedUntil = Math.max(preloadedUntil, index);
   }
+
+  $: threshold = item.options.firstGraphicChangeAfterSecondText ? 1 : 0;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
 
 <Scroller
-  threshold={0}
+  {threshold}
   top={top / windowHeight}
   bottom={bottom / windowHeight}
   bind:index
