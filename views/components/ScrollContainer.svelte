@@ -28,15 +28,25 @@
   $: variant = containerWidth < 500 ? "small" : "large";
   $: aspectRatio = images[0].width / images[0].height;
 
-  let index, offset, progress, windowHeight, threshold;
+  let index, offset, progress, windowHeight, threshold, top;
   const padding = 32;
 
-  // Glue to top of page (counting 90px for header) on mobile, center vertically on desktop
-  $: minHeaderSpace = variant === "small" ? 90 : Infinity;
-
   $: imageHeight = containerWidth / aspectRatio;
-  $: top =
-    Math.min(minHeaderSpace, windowHeight / 2 - imageHeight / 2) - padding;
+  $: {
+    if (variant === "small") {
+      // set 90px distance to top on mobile
+      top = 90;
+    } else {
+      // if the vertical center is smaller than 90px set distance to top to account for header
+      // else set distance to top to vertical center
+      const verticalCenter = windowHeight / 2 - imageHeight / 2;
+      if (verticalCenter < 90) {
+        top = 90;
+      } else {
+        top = verticalCenter - padding;
+      }
+    }
+  }
   $: bottom = top + imageHeight + 2 * padding;
 
   $: imageUrls = images.map((image) =>
