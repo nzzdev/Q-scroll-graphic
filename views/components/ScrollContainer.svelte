@@ -28,7 +28,7 @@
   $: variant = containerWidth < 500 ? "small" : "large";
   $: aspectRatio = images[0].width / images[0].height;
 
-  let index, offset, progress, windowHeight;
+  let index, offset, progress, windowHeight, threshold;
   const padding = 32;
 
   // Glue to top of page (counting 90px for header) on mobile, center vertically on desktop
@@ -44,7 +44,6 @@
   );
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
-
   let preloadedUntil = -1;
   $: if (index !== undefined) {
     // Always preload the next image, so the loading is usually not visible
@@ -59,12 +58,14 @@
     }
     preloadedUntil = Math.max(preloadedUntil, index);
   }
+
+  $: threshold = item.options.firstGraphicChangeAfterSecondText ? 1 : 0;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
 
 <Scroller
-  threshold={0}
+  {threshold}
   top={top / windowHeight}
   bottom={bottom / windowHeight}
   bind:index
@@ -105,8 +106,13 @@
   </div>
 
   <div slot="foreground" class="s-font-text">
-    <section style="height: 20vh; max-height: {maxHeight}px;" />
-    <section style="height: 80vh; max-height: {maxHeight}px;" />
+    {#if item.options.firstGraphicChangeAfterSecondText}
+      <div style="height: 20vh; max-height: {maxHeight}px;" />
+      <div style="height: 80vh; max-height: {maxHeight}px;" />
+    {:else}
+      <section style="height: 20vh; max-height: {maxHeight}px;" />
+      <section style="height: 80vh; max-height: {maxHeight}px;" />
+    {/if}
     {#each item.steps as step}
       {#if step.text}
         <TextBox {maxHeight} {variant} text={step.text} />

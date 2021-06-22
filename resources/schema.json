@@ -118,6 +118,16 @@
     "notes": {
       "title": "Anmerkungen",
       "type": "string"
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "firstGraphicChangeAfterSecondText": {
+          "type": "boolean",
+          "title": "Erster Grafikwechsel nach zweitem Text",
+          "default": "false"
+        }
+      }
     }
   },
   "required": ["title"]
