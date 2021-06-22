@@ -30,16 +30,5 @@
         {/each}
       </div>
     {/if}
-    {#if item.acronym}
-      <div class="s-q-item__footer__acronym">NZZ / {item.acronym}</div>
-    {:else}
-      <div class="s-q-item__footer__acronym">NZZ</div>
-    {/if}
   </div>
 </div>
-
-<style>
-  .s-q-item__footer {
-    margin-top: 0;
-  }
-</style>
