@@ -21,7 +21,7 @@
         }
         textReplacement = `<span style="font-weight: 100; border-radius: 2px; padding: 0px 4px; background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
       } else if (highlightText.type === "underline") {
-        textReplacement = `<u style="text-decoration: underline solid ${highlightText.color} 1px;">${text}</u>`;
+        textReplacement = `<u style="text-decoration: underline solid ${highlightText.color} 2px;">${text}</u>`;
       } else if (highlightText.type === "bold") {
         textReplacement = `<b>${text}</b>`;
       }
