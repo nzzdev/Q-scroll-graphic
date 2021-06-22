@@ -1,6 +1,7 @@
 <script>
   import TextBox from "./TextBox.svelte";
   import Scroller from "./Scroller.svelte";
+  import Footer from "./Footer.svelte";
   import { fade } from "svelte/transition";
   import { getImageUrls, getPreloadImageUrl } from "./helpers.js";
 
@@ -71,7 +72,10 @@
   bind:progress
 >
   <div slot="background">
-    <div class="q-scroll-graphic-background">
+    <div
+      class="q-scroll-graphic-background"
+      style="padding-bottom: {imageHeight + padding}px;"
+    >
       <!-- Use images in reverse order, so the z-order is correct automatically:
               Image n is on top and fades out
               Image n+1 is below and becomes visible
@@ -90,13 +94,14 @@
             <img
               src={image.png1x}
               alt=""
-              style="padding-top: {padding}px"
+              style="padding-top: {padding}px;"
               out:fade
             />
           </picture>
         {/if}
       {/each}
     </div>
+    <Footer {item} />
   </div>
 
   <div slot="foreground" class="s-font-text">

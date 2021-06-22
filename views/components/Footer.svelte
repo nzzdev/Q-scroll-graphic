@@ -37,3 +37,9 @@
     {/if}
   </div>
 </div>
+
+<style>
+  .s-q-item__footer {
+    margin-top: 0;
+  }
+</style>

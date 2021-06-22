@@ -10,43 +10,6 @@
       "variants": [
         {
           "asset": {
-            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/06/16/350x700-5e7c08f39de2f576b498ee95f7a7b129.png",
-            "key": "2021/06/16/350x700-5e7c08f39de2f576b498ee95f7a7b129.png",
-            "width": 350,
-            "height": 700,
-            "size": 1401,
-            "type": "image/png"
-          }
-        },
-        {
-          "minWidth": 500,
-          "asset": {
-            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/06/16/640x400-015c7d6271cb459bec6bb93758cdebda.png",
-            "key": "2021/06/16/640x400-015c7d6271cb459bec6bb93758cdebda.png",
-            "width": 640,
-            "height": 400,
-            "size": 2144,
-            "type": "image/png"
-          }
-        },
-        {
-          "minWidth": 800,
-          "asset": {
-            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/06/16/1120x600-e6c8c4716b95a145acdbb27e33518dc8.png",
-            "key": "2021/06/16/1120x600-e6c8c4716b95a145acdbb27e33518dc8.png",
-            "width": 1120,
-            "height": 600,
-            "size": 6203,
-            "type": "image/png"
-          }
-        }
-      ],
-      "text": "Dieser Schritt hat mehrere Varianten"
-    },
-    {
-      "variants": [
-        {
-          "asset": {
             "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/05/28/m_grundlage-d552a255158123bf6340b1c74f54727b.png",
             "key": "2021/05/28/m_grundlage-d552a255158123bf6340b1c74f54727b.png",
             "width": 701,

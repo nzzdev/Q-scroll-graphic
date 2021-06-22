@@ -1,6 +1,4 @@
 <script>
-  import Footer from "./components/Footer.svelte";
-
   export let item;
   export let id;
   export let displayOptions;
@@ -17,7 +15,6 @@
     </div>
   {/if}
   <div id="{id}_container" class="q-scroll-graphic-container" />
-  <Footer {item} />
 </div>
 
 <style>
