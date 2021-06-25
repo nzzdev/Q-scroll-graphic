@@ -19,11 +19,11 @@
         if (backgroundColor.isValid) {
           textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
         }
-        textReplacement = `<span style="font-weight: 100; border-radius: 2px; padding: 0px 4px; background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
+        textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
       } else if (highlightText.type === "underline") {
-        textReplacement = `<u style="text-decoration: underline solid ${highlightText.color} 2px;">${text}</u>`;
+        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightText.color};">${text}</u>`;
       } else if (highlightText.type === "bold") {
-        textReplacement = `<b>${text}</b>`;
+        textReplacement = `<b style="color: ${highlightText.color}">${text}</b>`;
       }
 
       step.text = step.text.replace(highlightText.text, textReplacement);
@@ -73,6 +73,19 @@
     padding-right: 20px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
+  }
+
+  .q-scroll-graphic-content--background {
+    font-weight: 100;
+    border-radius: 2px;
+    padding: 0px 4px;
+  }
+
+  .q-scroll-graphic-content--underline {
+    text-underline-offset: 0.1em;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
   }
 
   .q-scroll-graphic-spacer {
