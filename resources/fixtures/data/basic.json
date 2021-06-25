@@ -33,6 +33,18 @@
       "text": "Von den 100 Personen in der Wohnüberbauung sind 65 erwerbstätig",
       "highlightTexts": [
         {
+          "type": "underline",
+          "preventBreakingToNextLine": true,
+          "text": "Von den 100 Personen",
+          "color": "#ffb400"
+        },
+        {
+          "type": "bold",
+          "preventBreakingToNextLine": true,
+          "text": "Wohnüberbauung",
+          "color": "#c3372f"
+        },
+        {
           "type": "background",
           "preventBreakingToNextLine": true,
           "text": "65 erwerbstätig",

@@ -75,13 +75,13 @@
     text-align: center;
   }
 
-  .q-scroll-graphic-content--background {
+  :global(.q-scroll-graphic-content--background) {
     font-weight: 100;
     border-radius: 2px;
     padding: 0px 4px;
   }
 
-  .q-scroll-graphic-content--underline {
+  :global(.q-scroll-graphic-content--underline) {
     text-underline-offset: 0.1em;
     text-decoration-line: underline;
     text-decoration-style: solid;
