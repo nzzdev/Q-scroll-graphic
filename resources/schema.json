@@ -21,7 +21,7 @@
       "title": "Schritte",
       "type": "array",
       "Q:options": {
-        "compact": true,
+        "layout": "compact",
         "expandable": {
           "itemLabelProperty": "text"
         }
@@ -38,7 +38,7 @@
             "title": "Hervorhebung von Text",
             "type": "array",
             "Q:options": {
-              "compact": true,
+              "layout": "compact",
               "expandable": {
                 "itemLabelProperty": "text"
               }
@@ -77,7 +77,7 @@
             "title": "Varianten",
             "type": "array",
             "Q:options": {
-              "compact": true,
+              "layout": "compact",
               "expandable": {
                 "itemLabelProperty": "minWidth"
               }
@@ -125,6 +125,12 @@
     "sources": {
       "title": "Quelle(n)",
       "type": "array",
+      "Q:options": {
+        "layout": "compact",
+        "expandable": {
+          "itemLabelProperty": "text"
+        }
+      },
       "items": {
         "type": "object",
         "title": "Quelle",
