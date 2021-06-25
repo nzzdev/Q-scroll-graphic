@@ -28,7 +28,7 @@
   $: variant = containerWidth < 500 ? "small" : "large";
   $: aspectRatio = images[0].width / images[0].height;
 
-  let index, offset, progress, windowHeight, threshold, top;
+  let index, offset, progress, windowHeight, top;
 
   $: imageHeight = containerWidth / aspectRatio;
   $: {
@@ -68,14 +68,13 @@
     preloadedUntil = Math.max(preloadedUntil, index);
   }
 
-  $: threshold = item.options.startAfterSecondText ? 1 : 0;
   $: fadeDuration = item.options.disableFade ? 50 : 400;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
 
 <Scroller
-  {threshold}
+  threshold={0.8}
   top={top / windowHeight}
   bottom={bottom / windowHeight}
   bind:index
@@ -116,11 +115,9 @@
 
   <div slot="foreground" class="s-font-text">
     {#if item.options.startAfterSecondText}
-      <div style="height: 20vh; max-height: {maxHeight}px;" />
-      <div style="height: 80vh; max-height: {maxHeight}px;" />
+      <div style="height: 100vh; max-height: {maxHeight}px;" />
     {:else}
-      <section style="height: 20vh; max-height: {maxHeight}px;" />
-      <section style="height: 80vh; max-height: {maxHeight}px;" />
+      <section style="height: 100vh; max-height: {maxHeight}px;" />
     {/if}
     {#each item.steps as step}
       {#if step.text}
