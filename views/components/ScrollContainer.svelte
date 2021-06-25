@@ -68,7 +68,7 @@
     preloadedUntil = Math.max(preloadedUntil, index);
   }
 
-  $: threshold = item.options.firstGraphicChangeAfterSecondText ? 1 : 0;
+  $: threshold = item.options.startAfterSecondText ? 1 : 0;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -110,7 +110,7 @@
   </div>
 
   <div slot="foreground" class="s-font-text">
-    {#if item.options.firstGraphicChangeAfterSecondText}
+    {#if item.options.startAfterSecondText}
       <div style="height: 20vh; max-height: {maxHeight}px;" />
       <div style="height: 80vh; max-height: {maxHeight}px;" />
     {:else}

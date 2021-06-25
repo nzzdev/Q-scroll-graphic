@@ -161,9 +161,9 @@
     "options": {
       "type": "object",
       "properties": {
-        "firstGraphicChangeAfterSecondText": {
+        "startAfterSecondText": {
           "type": "boolean",
-          "title": "Erster Grafikwechsel nach zweitem Text",
+          "title": "Grafikabfolge beginnt nach zweitem Text",
           "default": "false"
         }
       }

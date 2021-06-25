@@ -335,6 +335,6 @@
     }
   ],
   "options": {
-    "firstGraphicChangeAfterSecondText": true
+    "startAfterSecondText": true
   }
 }
