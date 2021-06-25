@@ -69,6 +69,7 @@
   }
 
   $: threshold = item.options.startAfterSecondText ? 1 : 0;
+  $: fadeDuration = item.options.disableFade ? 50 : 400;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -101,7 +102,11 @@
             <source
               srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
             />
-            <img src={image.png1x} alt="" out:fade />
+            <img
+              src={image.png1x}
+              alt=""
+              out:fade={{ duration: fadeDuration }}
+            />
           </picture>
         {/if}
       {/each}

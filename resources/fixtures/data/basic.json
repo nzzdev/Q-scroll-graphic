@@ -347,6 +347,7 @@
     }
   ],
   "options": {
-    "startAfterSecondText": true
+    "startAfterSecondText": true,
+    "disableFade": false
   }
 }
