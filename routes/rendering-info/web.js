@@ -91,7 +91,7 @@ module.exports = {
           (function () {
             var target = document.querySelector('#${context.id}_container');
             target.innerHTML = "";
-            var props = JSON.parse('${JSON.stringify(context)}');
+            var props = ${JSON.stringify(context)};
             new window._q_scroll_graphic.ScrollGraphic({
               "target": target,
               "props": props
