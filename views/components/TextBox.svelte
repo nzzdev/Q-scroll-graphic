@@ -5,28 +5,28 @@
   export let step;
 
   function getHighlightedText(step) {
-    for (let highlightText of step.highlightTexts) {
+    for (let highlightedText of step.highlightedTexts) {
       let textReplacement = "";
-      let text = highlightText.text;
+      let text = highlightedText.text;
 
-      if (highlightText.preventBreakingToNextLine) {
+      if (highlightedText.preventBreakingToNextLine) {
         text = text.replace(/ /g, "&nbsp;");
       }
 
-      if (highlightText.type === "background") {
-        const backgroundColor = new TinyColor(highlightText.color);
+      if (highlightedText.type === "background") {
+        const backgroundColor = new TinyColor(highlightedText.color);
         let textColor = "#ffffff";
         if (backgroundColor.isValid) {
           textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
         }
         textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
-      } else if (highlightText.type === "underline") {
-        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightText.color};">${text}</u>`;
-      } else if (highlightText.type === "bold") {
-        textReplacement = `<b style="color: ${highlightText.color}">${text}</b>`;
+      } else if (highlightedText.type === "underline") {
+        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedText.color};">${text}</u>`;
+      } else if (highlightedText.type === "bold") {
+        textReplacement = `<b style="color: ${highlightedText.color}">${text}</b>`;
       }
 
-      step.text = step.text.replace(highlightText.text, textReplacement);
+      step.text = step.text.replace(highlightedText.text, textReplacement);
     }
 
     return step.text;
@@ -39,7 +39,7 @@
       <p
         class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
       >
-        {#if step.highlightTexts && step.highlightTexts.length > 0}
+        {#if step.highlightedTexts && step.highlightedTexts.length > 0}
           {@html getHighlightedText(step)}
         {:else}
           {step.text}

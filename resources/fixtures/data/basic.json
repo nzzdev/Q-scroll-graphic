@@ -31,7 +31,7 @@
         }
       ],
       "text": "Von den 100 Personen in der Wohnüberbauung sind 65 erwerbstätig",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "underline",
           "preventBreakingToNextLine": true,
@@ -77,7 +77,7 @@
         }
       ],
       "text": "6 Personen sind im Gesundheits- und Sozialwesen beschäftigt, 2 davon in allgemeinen Krankenhäusern.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": true,
@@ -117,7 +117,7 @@
         }
       ],
       "text": "1 kulturschaffende Person wohnt im Corona-Haus, und 2 Personen sind im Gastgewerbe tätig.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": true,
@@ -163,7 +163,7 @@
         }
       ],
       "text": "39&nbsp;Hausbewohnerinnen und -bewohner waren während des Lockdowns im Frühling im Home-Office.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": false,
@@ -203,7 +203,7 @@
         }
       ],
       "text": "Im März und April waren 10&nbsp;Personen in Kurzarbeit.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": false,
@@ -237,7 +237,7 @@
         }
       ],
       "text": "Gegenwärtig sind 2&nbsp;Personen in Kurzarbeit.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": false,
@@ -271,7 +271,7 @@
         }
       ],
       "text": "Genauso viele Personen sind derzeit arbeitslos. Statistisch sind es gar mehr als 2. Im gleichen Zeitraum vor einem Jahr waren es weniger als 2.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": false,
@@ -305,7 +305,7 @@
         }
       ],
       "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer beziehen einen Lohn von 4000 Franken oder weniger. Die Lohneinbussen von bis zu 19 Prozent, die sie derzeit erleben, sind schwer zu tragen.",
-      "highlightTexts": [
+      "highlightedTexts": [
         {
           "type": "background",
           "preventBreakingToNextLine": false,

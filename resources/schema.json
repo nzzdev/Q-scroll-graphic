@@ -34,7 +34,7 @@
             "title": "Text",
             "type": "string"
           },
-          "highlightTexts": {
+          "highlightedTexts": {
             "title": "Hervorhebung von Text",
             "type": "array",
             "Q:options": {
