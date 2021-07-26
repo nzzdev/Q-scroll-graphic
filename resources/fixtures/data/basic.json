@@ -36,19 +36,19 @@
           "type": "underline",
           "preventLineBreak": true,
           "text": "Von den 100 Personen",
-          "color": "#ffb400"
+          "color": 0
         },
         {
           "type": "bold",
           "preventLineBreak": true,
           "text": "Wohnüberbauung",
-          "color": "#c3372f"
+          "color": 1
         },
         {
           "type": "background",
           "preventLineBreak": true,
           "text": "65 erwerbstätig",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -82,13 +82,13 @@
           "type": "background",
           "preventLineBreak": true,
           "text": "6 Personen",
-          "color": "#05032d"
+          "color": 2
         },
         {
           "type": "background",
           "preventLineBreak": false,
           "text": "im Gesundheits- und Sozialwesen",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -122,19 +122,19 @@
           "type": "background",
           "preventLineBreak": true,
           "text": "1 kulturschaffende Person",
-          "color": "#05032d"
+          "color": 2
         },
         {
           "type": "background",
           "preventLineBreak": true,
           "text": "2 Personen",
-          "color": "#05032d"
+          "color": 2
         },
         {
           "type": "background",
           "preventLineBreak": false,
           "text": "im Gastgewerbe",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -168,13 +168,13 @@
           "type": "background",
           "preventLineBreak": false,
           "text": "39&nbsp;Hausbewohnerinnen und -bewohner",
-          "color": "#05032d"
+          "color": 2
         },
         {
           "type": "background",
           "preventLineBreak": true,
           "text": "im&nbsp;Home-Office",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -208,7 +208,7 @@
           "type": "background",
           "preventLineBreak": false,
           "text": "10&nbsp;Personen in Kurzarbeit",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -242,7 +242,7 @@
           "type": "background",
           "preventLineBreak": false,
           "text": "2&nbsp;Personen in Kurzarbeit",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -276,7 +276,7 @@
           "type": "background",
           "preventLineBreak": false,
           "text": "Genauso viele Personen",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -310,7 +310,7 @@
           "type": "background",
           "preventLineBreak": false,
           "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer",
-          "color": "#05032d"
+          "color": 2
         }
       ]
     },
@@ -338,6 +338,17 @@
           }
         }
       ]
+    }
+  ],
+  "highlightedTextColors": [
+    {
+      "color": "#ffb400"
+    },
+    {
+      "color": "#c3372f"
+    },
+    {
+      "color": "#05032d"
     }
   ],
   "sources": [
