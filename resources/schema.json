@@ -47,6 +47,10 @@
               "title": "Hervorhebung",
               "type": "object",
               "properties": {
+                "text": {
+                  "title": "Text",
+                  "type": "string"
+                },
                 "type": {
                   "title": "Typ",
                   "type": "string",
@@ -56,16 +60,21 @@
                     "enum_titles": ["Hintergrund", "Unterstrichen", "Fett"]
                   }
                 },
-                "text": {
-                  "title": "Text",
-                  "type": "string"
-                },
                 "color": {
                   "title": "Farbe",
-                  "type": "string",
-                  "Q:type": "color"
+                  "type": "number",
+                  "default": 0,
+                  "Q:options": {
+                    "dynamicSchema": {
+                      "type": "ToolEndpoint",
+                      "config": {
+                        "endpoint": "dynamic-schema/highlightedTextColors",
+                        "fields": ["highlightedTextColors"]
+                      }
+                    }
+                  }
                 },
-                "preventBreakingToNextLine": {
+                "preventLineBreak": {
                   "title": "Zeilenumbruch verhindern",
                   "type": "boolean",
                   "default": false
@@ -118,6 +127,26 @@
                 "asset": {}
               }
             ]
+          }
+        }
+      }
+    },
+    "highlightedTextColors": {
+      "title": "Hervorhebungsfarben",
+      "type": "array",
+      "Q:options": {
+        "layout": "compact",
+        "expandable": {
+          "itemLabelProperty": "color"
+        }
+      },
+      "items": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "title": "Farbe",
+            "type": "string",
+            "Q:type": "color"
           }
         }
       }

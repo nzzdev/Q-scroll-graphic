@@ -34,19 +34,19 @@
       "highlightedTexts": [
         {
           "type": "underline",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "Von den 100 Personen",
           "color": "#ffb400"
         },
         {
           "type": "bold",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "Wohnüberbauung",
           "color": "#c3372f"
         },
         {
           "type": "background",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "65 erwerbstätig",
           "color": "#05032d"
         }
@@ -80,13 +80,13 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "6 Personen",
           "color": "#05032d"
         },
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "im Gesundheits- und Sozialwesen",
           "color": "#05032d"
         }
@@ -120,19 +120,19 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "1 kulturschaffende Person",
           "color": "#05032d"
         },
         {
           "type": "background",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "2 Personen",
           "color": "#05032d"
         },
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "im Gastgewerbe",
           "color": "#05032d"
         }
@@ -166,13 +166,13 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "39&nbsp;Hausbewohnerinnen und -bewohner",
           "color": "#05032d"
         },
         {
           "type": "background",
-          "preventBreakingToNextLine": true,
+          "preventLineBreak": true,
           "text": "im&nbsp;Home-Office",
           "color": "#05032d"
         }
@@ -206,7 +206,7 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "10&nbsp;Personen in Kurzarbeit",
           "color": "#05032d"
         }
@@ -240,7 +240,7 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "2&nbsp;Personen in Kurzarbeit",
           "color": "#05032d"
         }
@@ -274,7 +274,7 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "Genauso viele Personen",
           "color": "#05032d"
         }
@@ -308,7 +308,7 @@
       "highlightedTexts": [
         {
           "type": "background",
-          "preventBreakingToNextLine": false,
+          "preventLineBreak": false,
           "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer",
           "color": "#05032d"
         }

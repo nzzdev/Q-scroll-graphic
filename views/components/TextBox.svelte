@@ -1,5 +1,7 @@
 <script>
   import { TinyColor } from "@ctrl/tinycolor";
+
+  export let item;
   export let maxHeight;
   export let variant;
   export let step;
@@ -9,21 +11,24 @@
       let textReplacement = "";
       let text = highlightedText.text;
 
-      if (highlightedText.preventBreakingToNextLine) {
+      if (highlightedText.preventLineBreak) {
         text = text.replace(/ /g, "&nbsp;");
       }
 
+      const highlightedTextColor =
+        item.highlightedTextColors[highlightedText.color].color;
+
       if (highlightedText.type === "background") {
-        const backgroundColor = new TinyColor(highlightedText.color);
+        const backgroundColor = new TinyColor(highlightedTextColor);
         let textColor = "#ffffff";
         if (backgroundColor.isValid) {
           textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
         }
         textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
       } else if (highlightedText.type === "underline") {
-        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedText.color};">${text}</u>`;
+        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedTextColor};">${text}</u>`;
       } else if (highlightedText.type === "bold") {
-        textReplacement = `<b style="color: ${highlightedText.color}">${text}</b>`;
+        textReplacement = `<b style="color: ${highlightedTextColor}">${text}</b>`;
       }
 
       step.text = step.text.replace(highlightedText.text, textReplacement);
