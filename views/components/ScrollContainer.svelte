@@ -120,9 +120,7 @@
       <section style="height: 100vh; max-height: {maxHeight}px;" />
     {/if}
     {#each item.steps as step}
-      {#if step.text}
-        <TextBox {maxHeight} {variant} {step} />
-      {/if}
+      <TextBox {maxHeight} {variant} {step} />
     {/each}
   </div>
 </Scroller>

@@ -38,10 +38,12 @@
     <p
       class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
     >
-      {#if step.highlightTexts && step.highlightTexts.length > 0}
-        {@html getHighlightedText(step)}
-      {:else}
-        {step.text}
+      {#if step.text && step.text !== ""}
+        {#if step.highlightTexts && step.highlightTexts.length > 0}
+          {@html getHighlightedText(step)}
+        {:else}
+          {step.text}
+        {/if}
       {/if}
     </p>
   </div>
