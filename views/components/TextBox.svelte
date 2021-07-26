@@ -35,17 +35,17 @@
 
 <section>
   <div class="q-scroll-graphic-text-box">
-    <p
-      class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
-    >
-      {#if step.text && step.text !== ""}
+    {#if step.text && step.text !== ""}
+      <p
+        class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
+      >
         {#if step.highlightTexts && step.highlightTexts.length > 0}
           {@html getHighlightedText(step)}
         {:else}
           {step.text}
         {/if}
-      {/if}
-    </p>
+      </p>
+    {/if}
   </div>
   <div class="q-scroll-graphic-spacer" style="max-height: {maxHeight}px" />
 </section>
