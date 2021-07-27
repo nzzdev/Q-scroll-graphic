@@ -192,21 +192,6 @@
     "notes": {
       "title": "Anmerkungen",
       "type": "string"
-    },
-    "options": {
-      "type": "object",
-      "properties": {
-        "startAfterSecondText": {
-          "type": "boolean",
-          "title": "Grafikabfolge beginnt nach zweitem Text",
-          "default": "false"
-        },
-        "disableFade": {
-          "type": "boolean",
-          "title": "Überblendung deaktivieren",
-          "default": "false"
-        }
-      }
     }
   },
   "required": ["title"]

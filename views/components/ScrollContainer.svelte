@@ -67,8 +67,6 @@
     }
     preloadedUntil = Math.max(preloadedUntil, index);
   }
-
-  $: fadeDuration = item.options.disableFade ? 50 : 400;
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -101,11 +99,7 @@
             <source
               srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
             />
-            <img
-              src={image.png1x}
-              alt=""
-              out:fade={{ duration: fadeDuration }}
-            />
+            <img src={image.png1x} alt="" transition:fade={{ duration: 50 }} />
           </picture>
         {/if}
       {/each}
@@ -114,11 +108,7 @@
   </div>
 
   <div slot="foreground" class="s-font-text">
-    {#if item.options.startAfterSecondText}
-      <div style="height: 100vh; max-height: {maxHeight}px;" />
-    {:else}
-      <section style="height: 100vh; max-height: {maxHeight}px;" />
-    {/if}
+    <div style="height: 100vh; max-height: {maxHeight}px;" />
     {#each item.steps as step}
       <TextBox {item} {maxHeight} {variant} {step} />
     {/each}

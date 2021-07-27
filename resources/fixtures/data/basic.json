@@ -356,9 +356,5 @@
       "link": {},
       "text": "BFS"
     }
-  ],
-  "options": {
-    "startAfterSecondText": false,
-    "disableFade": false
-  }
+  ]
 }
