@@ -3,7 +3,7 @@
   import Scroller from "./Scroller.svelte";
   import Footer from "./Footer.svelte";
   import { fade } from "svelte/transition";
-  import { getImageUrls, getPreloadImageUrl } from "./helpers.js";
+  import { getImageUrls } from "./helpers.js";
 
   export let imageServiceUrl;
   export let containerWidth;
@@ -53,20 +53,6 @@
   );
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
-  let preloadedUntil = -1;
-  $: if (index !== undefined) {
-    // Always preload the next image, so the loading is usually not visible
-    preloadImagesUntil(imageUrls, index + 1);
-  }
-
-  function preloadImagesUntil(imageUrls, index) {
-    for (let i = preloadedUntil + 1; i <= index; i += 1) {
-      if (imageUrls[i]) {
-        new Image().src = getPreloadImageUrl(imageUrls[i]);
-      }
-    }
-    preloadedUntil = Math.max(preloadedUntil, index);
-  }
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -85,12 +71,13 @@
       style="padding-bottom: {imageHeight}px;"
     >
       <!-- Use images in reverse order, so the z-order is correct automatically:
+              Image n and n+1 are rendered
               Image n is on top and fades out
               Image n+1 is below and becomes visible
               => smooth transition n to n+1
       -->
       {#each imageUrlsReverse as { id, image }}
-        {#if id === Math.min(index, imageUrlsReverse.length - 1)}
+        {#if [index, index + 1].includes(id)}
           <picture>
             <source
               type="image/webp"

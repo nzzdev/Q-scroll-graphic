@@ -17,8 +17,3 @@ export function getImageUrls(image, width, imageServiceUrl) {
     webp4x: getImageUrl(image, width * 4, "webply", imageServiceUrl),
   };
 }
-
-export function getPreloadImageUrl(image) {
-  const dpr = window.devicePixelRatio;
-  return image[`webp${dpr}x`];
-}
