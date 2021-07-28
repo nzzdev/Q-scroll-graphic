@@ -1,7 +1,6 @@
 {
-  "title": "Intro",
-  "department": "Visuals",
-  "publication": "nzz",
+  "title": "FIXTURE: Two variants per step and highlighted text",
+  "subtitle": "Subtitle",
   "acronym": "mrt.",
   "steps": [
     {
@@ -27,17 +26,6 @@
             "width": 2520,
             "height": 2060
           }
-        },
-        {
-          "minWidth": 800,
-          "asset": {
-            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/21/fw-copy-24-6e5f436cacca74e04af989b6944ab945.png",
-            "key": "2021/07/21/fw-copy-24-6e5f436cacca74e04af989b6944ab945.png",
-            "width": 2611,
-            "height": 2161,
-            "size": 293415,
-            "type": "image/png"
-          }
         }
       ],
       "highlightedTexts": [
@@ -46,6 +34,18 @@
           "preventLineBreak": false,
           "text": "Schweiz",
           "color": 0
+        },
+        {
+          "type": "underline",
+          "color": 1,
+          "preventLineBreak": true,
+          "text": "26 Kantonen"
+        },
+        {
+          "type": "bold",
+          "color": 0,
+          "preventLineBreak": false,
+          "text": "Facebook-Freundschaften"
         }
       ]
     },
@@ -262,5 +262,19 @@
       "color": "#0C1E8D"
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "link": {},
+      "text": "ESA"
+    },
+    {
+      "link": {},
+      "text": "Copernicus"
+    },
+    {
+      "link": {},
+      "text": "OSM"
+    }
+  ],
+  "notes": "Anmerkung"
 }
