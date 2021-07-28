@@ -26,12 +26,20 @@
 
   $: maxHeight = 2 * containerWidth;
   $: variant = containerWidth < 500 ? "small" : "large";
-  $: aspectRatio = images[0].width / images[0].height;
 
-  let index, offset, progress, windowHeight, top;
+  let index,
+    offset,
+    progress,
+    windowHeight,
+    top,
+    bottom,
+    aspectRatio,
+    imageHeight,
+    paddingBottom;
 
-  $: imageHeight = containerWidth / aspectRatio;
   $: {
+    aspectRatio = images[0].width / images[0].height;
+    imageHeight = containerWidth / aspectRatio;
     if (variant === "small") {
       // set 90px distance to top on mobile
       top = 90;
@@ -45,8 +53,15 @@
         top = verticalCenter;
       }
     }
+
+    bottom = top + imageHeight;
+
+    if (imageHeight > windowHeight) {
+      paddingBottom = windowHeight - top;
+    } else {
+      paddingBottom = imageHeight;
+    }
   }
-  $: bottom = top + imageHeight;
 
   $: imageUrls = images.map((image) =>
     getImageUrls(image, containerWidth, imageServiceUrl)
@@ -68,7 +83,7 @@
   <div slot="background">
     <div
       class="q-scroll-graphic-background"
-      style="padding-bottom: {imageHeight}px;"
+      style="padding-bottom: {paddingBottom}px;"
     >
       <!-- Use images in reverse order, so the z-order is correct automatically:
               Image n and n+1 are rendered
@@ -86,7 +101,13 @@
             <source
               srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
             />
-            <img src={image.png1x} alt="" transition:fade={{ duration: 50 }} />
+            <img
+              class:image--horizontal-fit={imageHeight <= windowHeight}
+              class:image--vertical-fit={imageHeight > windowHeight}
+              src={image.png1x}
+              alt=""
+              transition:fade={{ duration: 50 }}
+            />
           </picture>
         {/if}
       {/each}
@@ -107,8 +128,15 @@
     position: relative;
   }
 
-  img {
-    width: 100%;
+  .image--horizontal-fit {
     position: absolute;
+    width: 100%;
+  }
+
+  .image--vertical-fit {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 </style>

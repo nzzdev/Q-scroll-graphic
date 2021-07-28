@@ -1,0 +1,266 @@
+{
+  "title": "Intro",
+  "department": "Visuals",
+  "publication": "nzz",
+  "acronym": "mrt.",
+  "steps": [
+    {
+      "text": "So kennen Sie die Schweiz mit ihren 26 Kantonen. Würde man die Grenzen jedoch anhand von Facebook-Freundschaften neu ziehen, ergäbe sich, je nach Kanton, ein ganz anderes Bild.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Schweiz-mw-80b589f567cbcdd221f0ff9585e53fd4.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Schweiz-mw-80b589f567cbcdd221f0ff9585e53fd4.png",
+            "size": 39993,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Schweiz-cw-43f630f4a5585ec437f8acf5e51e5b5c.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Schweiz-cw-43f630f4a5585ec437f8acf5e51e5b5c.png",
+            "size": 60062,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        },
+        {
+          "minWidth": 800,
+          "asset": {
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/21/fw-copy-24-6e5f436cacca74e04af989b6944ab945.png",
+            "key": "2021/07/21/fw-copy-24-6e5f436cacca74e04af989b6944ab945.png",
+            "width": 2611,
+            "height": 2161,
+            "size": 293415,
+            "type": "image/png"
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Schweiz",
+          "color": 0
+        }
+      ]
+    },
+    {
+      "text": "Die Zürcher haben Freunde in allen Kantonen der Schweiz und auch im Ausland. Zürich ist der Kanton der am besten über Facebook vernetzt ist. Zum Beispiel auch in entfernte Regionen in Portugal oder Italien.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Zurich-mw-481a54cbcef8db00a05137a9208aa2f3.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Zurich-mw-481a54cbcef8db00a05137a9208aa2f3.png",
+            "size": 65935,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Zurich-cw-0a140108d70094bd0ca059b6ca16b529.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Zurich-cw-0a140108d70094bd0ca059b6ca16b529.png",
+            "size": 96462,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Zürcher",
+          "color": 1
+        }
+      ]
+    },
+    {
+      "text": "Aus der Sicht von Aargauer Facebook-Freundschaften sieht die Schweiz jedoch ganz anders aus. Verbindungen in die Romandie gibt es kaum.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Aargau-mw-600673fe6463f8cd4b2c7108fec94748.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Aargau-mw-600673fe6463f8cd4b2c7108fec94748.png",
+            "size": 48874,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Aargau-cw-17425db38adfb914441be63ae8a30f89.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Aargau-cw-17425db38adfb914441be63ae8a30f89.png",
+            "size": 73308,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Aargauer",
+          "color": 1
+        }
+      ]
+    },
+    {
+      "text": "Auch die Facebook-Schweiz des Kantons Genf hat nicht mehr viel mit der geografischen zu tun. Das nahe Frankreich gehört eher zur Schweiz als der Osten des Landes.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Genf-mw-ca5fb2452bd813aed2873c38f3318041.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Genf-mw-ca5fb2452bd813aed2873c38f3318041.png",
+            "size": 34175,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Genf-cw-2c7dcdd62064e4dad9dd099ee1fb65df.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Genf-cw-2c7dcdd62064e4dad9dd099ee1fb65df.png",
+            "size": 51388,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Genf",
+          "color": 1
+        }
+      ]
+    },
+    {
+      "text": "Am Beispiel der Waadt zeigt sich, dass die Facebook-Nutzerinnen und -Nutzer in der Romandie viele Verbindungen nach Portugal haben.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Waadt-mw-b7eeeff4dca42712ff09d838d2a69ff5.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Waadt-mw-b7eeeff4dca42712ff09d838d2a69ff5.png",
+            "size": 45790,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Waadt-cw-99f9858b64d4c5f9f8c5205a3ec64b38.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Waadt-cw-99f9858b64d4c5f9f8c5205a3ec64b38.png",
+            "size": 69957,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Waadt",
+          "color": 1
+        }
+      ]
+    },
+    {
+      "text": "Der Kanton Graubünden ist zwar mit relativ vielen Regionen befreundet.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Graubunden-mw-6370c63f23a37bcbaefe76e6f49dfafe.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Graubunden-mw-6370c63f23a37bcbaefe76e6f49dfafe.png",
+            "size": 33845,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Graubunden-cw-6b7f8958c66a96ebdd386e8961be687a.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Graubunden-cw-6b7f8958c66a96ebdd386e8961be687a.png",
+            "size": 51635,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Graubünden",
+          "color": 1
+        }
+      ]
+    },
+    {
+      "text": "Die meisten Bergkantone, wie zum Beispiel Uri, pflegen jedoch fast nur Freundschaften innerhalb ihrer nächsten Umgebung.",
+      "variants": [
+        {
+          "asset": {
+            "key": "2021/07/08/Uri-mw-0736c0418e78a111cde863e5b991ccc8.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Uri-mw-0736c0418e78a111cde863e5b991ccc8.png",
+            "size": 5582,
+            "type": "image/png",
+            "width": 1400,
+            "height": 1552
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "key": "2021/07/08/Uri-cw-26b7389322b7a9efcf4b98a83ec67147.png",
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2021/07/08/Uri-cw-26b7389322b7a9efcf4b98a83ec67147.png",
+            "size": 12074,
+            "type": "image/png",
+            "width": 2520,
+            "height": 2060
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "Uri",
+          "color": 1
+        }
+      ]
+    }
+  ],
+  "highlightedTextColors": [
+    {
+      "color": "#3852EE"
+    },
+    {
+      "color": "#0C1E8D"
+    }
+  ],
+  "sources": []
+}
