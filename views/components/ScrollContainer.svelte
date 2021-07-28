@@ -56,7 +56,7 @@
 
     bottom = top + imageHeight;
 
-    if (imageHeight > windowHeight) {
+    if (imageHeight > windowHeight - top) {
       paddingBottom = windowHeight - top;
     } else {
       paddingBottom = imageHeight;
@@ -103,8 +103,8 @@
             />
             <img
               class="q-scroll-graphic-image"
-              class:image--horizontal-fit={imageHeight <= windowHeight}
-              class:image--vertical-fit={imageHeight > windowHeight}
+              class:image--horizontal-fit={imageHeight <= windowHeight - top}
+              class:image--vertical-fit={imageHeight > windowHeight - top}
               src={image.png1x}
               alt=""
               transition:fade={{ duration: 50 }}
