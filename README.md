@@ -2,7 +2,7 @@
 
 **maintainer**: [manuelroth](https://github.com/manuelroth)
 
-Short description of tool and link to either [demo](https://editor.q.tools/) or [playground](https://q-playground.st.nzz.ch).
+Q scroll graphic is one tool of the Q toolbox to create a visual element where the graphic is fixed to the viewport and the text scrolls on top of the graphic. See a more details definition of a scroll graphic in [our styleguide](https://nzzdev.github.io/Storytelling-Styleguide/#/grafikabfolge).
 
 ## Table of contents
 
