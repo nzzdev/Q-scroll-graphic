@@ -30,27 +30,8 @@
           }
         }
       ],
-      "text": "Von den 100 Personen in der Wohnüberbauung sind 65 erwerbstätig",
-      "highlightedTexts": [
-        {
-          "type": "underline",
-          "preventLineBreak": true,
-          "text": "Von den 100 Personen",
-          "color": 0
-        },
-        {
-          "type": "bold",
-          "preventLineBreak": true,
-          "text": "Wohnüberbauung",
-          "color": 1
-        },
-        {
-          "type": "background",
-          "preventLineBreak": true,
-          "text": "65 erwerbstätig",
-          "color": 2
-        }
-      ]
+      "text": "",
+      "highlightedTexts": []
     },
     {
       "variants": [
@@ -76,18 +57,24 @@
           }
         }
       ],
-      "text": "6 Personen sind im Gesundheits- und Sozialwesen beschäftigt, 2 davon in allgemeinen Krankenhäusern.",
+      "text": "Von den 100 Personen in der Wohnüberbauung sind 65 erwerbstätig",
       "highlightedTexts": [
         {
-          "type": "background",
+          "type": "underline",
           "preventLineBreak": true,
-          "text": "6 Personen",
-          "color": 2
+          "text": "Von den 100 Personen",
+          "color": 0
+        },
+        {
+          "type": "bold",
+          "preventLineBreak": true,
+          "text": "Wohnüberbauung",
+          "color": 1
         },
         {
           "type": "background",
-          "preventLineBreak": false,
-          "text": "im Gesundheits- und Sozialwesen",
+          "preventLineBreak": true,
+          "text": "65 erwerbstätig",
           "color": 2
         }
       ]
@@ -116,25 +103,19 @@
           }
         }
       ],
-      "text": "1 kulturschaffende Person wohnt im Corona-Haus, und 2 Personen sind im Gastgewerbe tätig.",
+      "text": "6 Personen sind im Gesundheits- und Sozialwesen beschäftigt, 2 davon in allgemeinen Krankenhäusern.",
       "highlightedTexts": [
         {
           "type": "background",
           "preventLineBreak": true,
-          "text": "1 kulturschaffende Person",
-          "color": 2
+          "text": "6 Personen",
+          "color": 0
         },
         {
           "type": "background",
           "preventLineBreak": true,
-          "text": "2 Personen",
-          "color": 2
-        },
-        {
-          "type": "background",
-          "preventLineBreak": false,
-          "text": "im Gastgewerbe",
-          "color": 2
+          "text": "im Gesundheits- und Sozialwesen",
+          "color": 0
         }
       ]
     },
@@ -162,19 +143,25 @@
           }
         }
       ],
-      "text": "39&nbsp;Hausbewohnerinnen und -bewohner waren während des Lockdowns im Frühling im Home-Office.",
+      "text": "1 kulturschaffende Person wohnt im Corona-Haus, und 2 Personen sind im Gastgewerbe tätig.",
       "highlightedTexts": [
         {
           "type": "background",
-          "preventLineBreak": false,
-          "text": "39&nbsp;Hausbewohnerinnen und -bewohner",
-          "color": 2
+          "preventLineBreak": true,
+          "text": "1 kulturschaffende Person",
+          "color": 0
         },
         {
           "type": "background",
           "preventLineBreak": true,
-          "text": "im&nbsp;Home-Office",
-          "color": 2
+          "text": "2 Personen",
+          "color": 0
+        },
+        {
+          "type": "background",
+          "color": 0,
+          "preventLineBreak": false,
+          "text": "im Gastgewerbe"
         }
       ]
     },
@@ -202,13 +189,19 @@
           }
         }
       ],
-      "text": "Im März und April waren 10&nbsp;Personen in Kurzarbeit.",
+      "text": "39&nbsp;Hausbewohnerinnen und -bewohner waren während des Lockdowns im Frühling im Home-Office.",
       "highlightedTexts": [
         {
           "type": "background",
           "preventLineBreak": false,
-          "text": "10&nbsp;Personen in Kurzarbeit",
-          "color": 2
+          "text": "39&nbsp;Hausbewohnerinnen und -bewohner",
+          "color": 0
+        },
+        {
+          "type": "background",
+          "color": 0,
+          "preventLineBreak": false,
+          "text": "im&nbsp;Home-Office"
         }
       ]
     },
@@ -236,13 +229,13 @@
           }
         }
       ],
-      "text": "Gegenwärtig sind 2&nbsp;Personen in Kurzarbeit.",
+      "text": "Im März und April waren 10&nbsp;Personen in Kurzarbeit.",
       "highlightedTexts": [
         {
           "type": "background",
           "preventLineBreak": false,
-          "text": "2&nbsp;Personen in Kurzarbeit",
-          "color": 2
+          "text": "10&nbsp;Personen in Kurzarbeit",
+          "color": 0
         }
       ]
     },
@@ -270,13 +263,13 @@
           }
         }
       ],
-      "text": "Genauso viele Personen sind derzeit arbeitslos. Statistisch sind es gar mehr als 2. Im gleichen Zeitraum vor einem Jahr waren es weniger als 2.",
+      "text": "Gegenwärtig sind 2&nbsp;Personen in Kurzarbeit.",
       "highlightedTexts": [
         {
           "type": "background",
           "preventLineBreak": false,
-          "text": "Genauso viele Personen",
-          "color": 2
+          "text": "2&nbsp;Personen in Kurzarbeit",
+          "color": 0
         }
       ]
     },
@@ -304,13 +297,13 @@
           }
         }
       ],
-      "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer beziehen einen Lohn von 4000 Franken oder weniger. Die Lohneinbussen von bis zu 19 Prozent, die sie derzeit erleben, sind schwer zu tragen.",
+      "text": "Genauso viele Personen sind derzeit arbeitslos. Statistisch sind es gar mehr als 2. Im gleichen Zeitraum vor einem Jahr waren es weniger als 2.",
       "highlightedTexts": [
         {
           "type": "background",
           "preventLineBreak": false,
-          "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer",
-          "color": 2
+          "text": "Genauso viele Personen",
+          "color": 0
         }
       ]
     },
@@ -337,18 +330,27 @@
             "type": "image/png"
           }
         }
+      ],
+      "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer beziehen einen Lohn von 4000 Franken oder weniger. Die Lohneinbussen von bis zu 19 Prozent, die sie derzeit erleben, sind schwer zu tragen.",
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "color": 0,
+          "preventLineBreak": false,
+          "text": "6&nbsp;Arbeitnehmerinnen und Arbeitnehmer"
+        }
       ]
     }
   ],
   "highlightedTextColors": [
     {
+      "color": "#05032d"
+    },
+    {
       "color": "#ffb400"
     },
     {
       "color": "#c3372f"
-    },
-    {
-      "color": "#05032d"
     }
   ],
   "sources": [
