@@ -102,6 +102,7 @@
               srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
             />
             <img
+              class="q-scroll-graphic-image"
               class:image--horizontal-fit={imageHeight <= windowHeight}
               class:image--vertical-fit={imageHeight > windowHeight}
               src={image.png1x}
@@ -128,13 +129,16 @@
     position: relative;
   }
 
-  .image--horizontal-fit {
+  .q-scroll-graphic-image {
     position: absolute;
+    background: currentColor;
+  }
+
+  .image--horizontal-fit {
     width: 100%;
   }
 
   .image--vertical-fit {
-    position: absolute;
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0);
