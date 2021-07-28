@@ -32,7 +32,7 @@ There is one env variable `IMAGE_SERVICE_URL` to be defined. It should contain a
 `{key}` will be replaced by the string Q-server stored as the key when the file got uploaded through Q-servers `/file` endpoint provided by the [file plugin](https://github.com/nzzdev/Q-server/blob/dev/plugins/file/index.js)
 `{width}` is replaced by the width the image should be loaded
 `{format}` will be `png` or `webp`
-Example: `https://q-images.nzz.ch/{key}?width={width}&format={format}`
+Example: `https://example.com/{key}?width={width}&format={format}`
 
 ## Development
 
@@ -89,7 +89,49 @@ There are three options for deployment:
 
 The tool structure follows the general structure of each Q tool. Further information can be found in [Q server documentation - Developing tools](https://nzzdev.github.io/Q-server/developing-tools.html).
 
-Here are all features listed which will have an impact on the tool but are not options. For example spacing issues. If there's a visual aspect, a printscreen would be nice.
+This tool was built using [Svelte](https://svelte.dev/). The title, subtitle and footer are rendered on server side. The scroll graphic is rendered on client side. The [svelte-scroller](https://github.com/sveltejs/svelte-scroller) component is used to keep track of the steps.
+
+#### Features
+
+A scroll graphic consists of multiple steps. Each step has multiple graphic variants, a text and highlighted texts. Highlighted texts can be used to highlight sections of the text. There are multiple highlight types to choose from background, underline and bold. The highlight colors are defined in a separate array. Colors are referenced using the index of the color in the array. See the example graphic below:
+
+```json
+{
+  "title": "FIXTURE: Two variants per step and highlighted text",
+  "subtitle": "Subtitle",
+  "steps": [
+    {
+      "variants": [
+        {
+          "asset": {
+            "url": "..."
+          }
+        },
+        {
+          "minWidth": 500,
+          "asset": {
+            "url": "..."
+          }
+        }
+      ],
+      "text": "So kennen Sie die Schweiz mit ihren 26 Kantonen. Würde man die Grenzen jedoch anhand von Facebook-Freundschaften neu ziehen, ergäbe sich, je nach Kanton, ein ganz anderes Bild.",
+      "highlightedTexts": [
+        {
+          "type": "background", // one of background, underline and bold
+          "preventLineBreak": false,
+          "text": "Schweiz",
+          "color": 0
+        }
+      ]
+    }
+  ],
+  "highlightedTextColors": [
+    {
+      "color": "#3852EE"
+    }
+  ]
+}
+```
 
 [to the top](#table-of-contents)
 
