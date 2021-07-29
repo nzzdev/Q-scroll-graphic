@@ -26,7 +26,7 @@
         });
       },
       {
-        rootMargin: "400px 0px", // TODO why 400?
+        rootMargin: "400px 0px",
       }
     );
     manager = {

@@ -20,11 +20,13 @@
               >
                 {source.text}
               </a>
+              {#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
+                ,&nbsp;
+              {/if}
+            {:else if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
+              {source.text},&nbsp;
             {:else}
               {source.text}
-            {/if}
-            {#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
-              ,&nbsp;
             {/if}
           {/if}
         {/each}
