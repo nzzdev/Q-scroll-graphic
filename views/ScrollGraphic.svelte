@@ -1,5 +1,6 @@
 <script>
   import ScrollContainer from "./components/ScrollContainer.svelte";
+  import Footer from "./components/Footer.svelte";
 
   export let item;
   export let imageServiceUrl;
@@ -11,4 +12,5 @@
   {#if containerWidth}
     <ScrollContainer {containerWidth} {imageServiceUrl} {item} />
   {/if}
+  <Footer {item} />
 </div>

@@ -1,7 +1,6 @@
 <script>
   import TextBox from "./TextBox.svelte";
   import Scroller from "./Scroller.svelte";
-  import Footer from "./Footer.svelte";
   import { fade } from "svelte/transition";
   import { getImageUrls } from "./helpers.js";
 
@@ -120,7 +119,6 @@
         {/if}
       {/each}
     </div>
-    <Footer {item} />
   </div>
 
   <div slot="foreground" class="s-font-text">
