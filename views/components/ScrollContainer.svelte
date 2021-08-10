@@ -21,7 +21,11 @@
       .sort((a, b) => b.minWidth - a.minWidth)
       .find((variant) => containerWidth >= variant.minWidth);
 
-    return variant.asset;
+    if (variant && variant.asset) {
+      return variant.asset;
+    } else {
+      return {};
+    }
   });
 
   $: maxHeight = 2 * containerWidth;
@@ -63,9 +67,11 @@
     }
   }
 
-  $: imageUrls = images.map((image) =>
-    getImageUrls(image, containerWidth, imageServiceUrl)
-  );
+  $: imageUrls = images.map((image) => {
+    if (image && image.key) {
+      return getImageUrls(image, containerWidth, imageServiceUrl);
+    }
+  });
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
 </script>
@@ -92,7 +98,7 @@
               => smooth transition n to n+1
       -->
       {#each imageUrlsReverse as { id, image }}
-        {#if [index - 1, index, index + 1].includes(id)}
+        {#if image && [index - 1, index, index + 1].includes(id)}
           <picture>
             <source
               type="image/webp"
