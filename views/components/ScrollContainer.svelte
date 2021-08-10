@@ -27,8 +27,8 @@
   $: maxHeight = 2 * containerWidth;
   $: variant = containerWidth < 500 ? "small" : "large";
 
-  let index,
-    offset,
+  let index = 0;
+  let offset,
     progress,
     windowHeight,
     top,
@@ -38,7 +38,7 @@
     paddingBottom;
 
   $: {
-    aspectRatio = images[0].width / images[0].height;
+    aspectRatio = images[index].width / images[index].height;
     imageHeight = containerWidth / aspectRatio;
     if (variant === "small") {
       // set 90px distance to top on mobile
@@ -92,7 +92,7 @@
               => smooth transition n to n+1
       -->
       {#each imageUrlsReverse as { id, image }}
-        {#if [index, index + 1].includes(id)}
+        {#if [index - 1, index, index + 1].includes(id)}
           <picture>
             <source
               type="image/webp"
@@ -105,6 +105,7 @@
               class="q-scroll-graphic-image"
               class:image--horizontal-fit={imageHeight <= windowHeight - top}
               class:image--vertical-fit={imageHeight > windowHeight - top}
+              class:image--hidden={[index - 1, index + 1].includes(id)}
               src={image.png1x}
               alt=""
               transition:fade={{ duration: 50 }}
@@ -142,5 +143,9 @@
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+  }
+
+  .image--hidden {
+    visibility: hidden;
   }
 </style>
