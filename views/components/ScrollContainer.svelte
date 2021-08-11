@@ -122,7 +122,7 @@
   </div>
 
   <div slot="foreground" class="s-font-text">
-    <div style="height: 100vh; max-height: {maxHeight}px;" />
+    <div style="height: 80vh; max-height: {maxHeight}px;" />
     {#each item.steps as step}
       <TextBox {item} {maxHeight} {variant} {step} />
     {/each}
