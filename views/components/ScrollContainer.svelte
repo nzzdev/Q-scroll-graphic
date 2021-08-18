@@ -108,9 +108,14 @@
             />
             <img
               class="q-scroll-graphic-image"
-              class:image--horizontal-fit={imageHeight <= windowHeight - top}
-              class:image--vertical-fit={imageHeight > windowHeight - top}
-              class:image--hidden={[index - 1, index + 1].includes(id)}
+              class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
+                windowHeight - top}
+              class:q-scroll-graphic-image--vertical-fit={imageHeight >
+                windowHeight - top}
+              class:q-scroll-graphic-image--hidden={[
+                index - 1,
+                index + 1,
+              ].includes(id)}
               src={image.png1x}
               alt=""
               transition:fade={{ duration: 50 }}
@@ -139,17 +144,17 @@
     background: currentColor;
   }
 
-  .image--horizontal-fit {
+  .q-scroll-graphic-image--horizontal-fit {
     width: 100%;
   }
 
-  .image--vertical-fit {
+  .q-scroll-graphic-image--vertical-fit {
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0);
   }
 
-  .image--hidden {
+  .q-scroll-graphic-image--hidden {
     display: none;
   }
 </style>
