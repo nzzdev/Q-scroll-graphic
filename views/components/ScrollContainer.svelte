@@ -1,7 +1,6 @@
 <script>
   import TextBox from "./TextBox.svelte";
   import Scroller from "./Scroller.svelte";
-  import Footer from "./Footer.svelte";
   import { fade } from "svelte/transition";
   import { getImageUrls } from "./helpers.js";
 
@@ -21,14 +20,18 @@
       .sort((a, b) => b.minWidth - a.minWidth)
       .find((variant) => containerWidth >= variant.minWidth);
 
-    return variant.asset;
+    if (variant && variant.asset) {
+      return variant.asset;
+    } else {
+      return {};
+    }
   });
 
   $: maxHeight = 2 * containerWidth;
   $: variant = containerWidth < 500 ? "small" : "large";
 
-  let index,
-    offset,
+  let index = 0;
+  let offset,
     progress,
     windowHeight,
     top,
@@ -38,7 +41,7 @@
     paddingBottom;
 
   $: {
-    aspectRatio = images[0].width / images[0].height;
+    aspectRatio = images[index].width / images[index].height;
     imageHeight = containerWidth / aspectRatio;
     if (variant === "small") {
       // set 90px distance to top on mobile
@@ -63,9 +66,11 @@
     }
   }
 
-  $: imageUrls = images.map((image) =>
-    getImageUrls(image, containerWidth, imageServiceUrl)
-  );
+  $: imageUrls = images.map((image) => {
+    if (image && image.key) {
+      return getImageUrls(image, containerWidth, imageServiceUrl);
+    }
+  });
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
 </script>
@@ -92,7 +97,7 @@
               => smooth transition n to n+1
       -->
       {#each imageUrlsReverse as { id, image }}
-        {#if [index, index + 1].includes(id)}
+        {#if image && [index - 1, index, index + 1].includes(id)}
           <picture>
             <source
               type="image/webp"
@@ -103,8 +108,14 @@
             />
             <img
               class="q-scroll-graphic-image"
-              class:image--horizontal-fit={imageHeight <= windowHeight - top}
-              class:image--vertical-fit={imageHeight > windowHeight - top}
+              class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
+                windowHeight - top}
+              class:q-scroll-graphic-image--vertical-fit={imageHeight >
+                windowHeight - top}
+              class:q-scroll-graphic-image--hidden={[
+                index - 1,
+                index + 1,
+              ].includes(id)}
               src={image.png1x}
               alt=""
               transition:fade={{ duration: 50 }}
@@ -113,11 +124,10 @@
         {/if}
       {/each}
     </div>
-    <Footer {item} />
   </div>
 
   <div slot="foreground" class="s-font-text">
-    <div style="height: 100vh; max-height: {maxHeight}px;" />
+    <div style="height: 80vh; max-height: {maxHeight}px;" />
     {#each item.steps as step}
       <TextBox {item} {maxHeight} {variant} {step} />
     {/each}
@@ -134,13 +144,17 @@
     background: currentColor;
   }
 
-  .image--horizontal-fit {
+  .q-scroll-graphic-image--horizontal-fit {
     width: 100%;
   }
 
-  .image--vertical-fit {
+  .q-scroll-graphic-image--vertical-fit {
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+  }
+
+  .q-scroll-graphic-image--hidden {
+    display: none;
   }
 </style>
