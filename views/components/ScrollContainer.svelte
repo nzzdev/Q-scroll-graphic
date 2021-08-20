@@ -73,6 +73,17 @@
   });
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
+
+  $: if (index !== undefined) {
+    // Always preload the next image, so the loading is usually not visible
+    preloadImagesUntil(imageUrls, index + 1);
+  }
+
+  function preloadImagesUntil(imageUrls, index) {
+    if (imageUrls[index]) {
+      new Image().src = imageUrls[index][`image${window.devicePixelRatio}x`];
+    }
+  }
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -97,30 +108,18 @@
               => smooth transition n to n+1
       -->
       {#each imageUrlsReverse as { id, image }}
-        {#if image && [index - 1, index, index + 1].includes(id)}
-          <picture>
-            <source
-              type="image/webp"
-              srcset="{image.webp1x} 1x, {image.webp2x} 2x, {image.webp3x} 3x, {image.webp4x} 4x"
-            />
-            <source
-              srcset="{image.png1x} 1x, {image.png2x} 2x, {image.png3x} 3x, {image.png4x} 4x"
-            />
-            <img
-              class="q-scroll-graphic-image"
-              class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
-                windowHeight - top}
-              class:q-scroll-graphic-image--vertical-fit={imageHeight >
-                windowHeight - top}
-              class:q-scroll-graphic-image--hidden={[
-                index - 1,
-                index + 1,
-              ].includes(id)}
-              src={image.png1x}
-              alt=""
-              transition:fade={{ duration: 50 }}
-            />
-          </picture>
+        {#if image && id === index}
+          <img
+            class="q-scroll-graphic-image"
+            class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
+              windowHeight - top}
+            class:q-scroll-graphic-image--vertical-fit={imageHeight >
+              windowHeight - top}
+            src={image.image1x}
+            srcset="{image.image1x} 1x, {image.image2x} 2x, {image.image3x} 3x, {image.image4x} 4x"
+            alt=""
+            transition:fade={{ duration: 50 }}
+          />
         {/if}
       {/each}
     </div>
@@ -152,9 +151,5 @@
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0);
-  }
-
-  .q-scroll-graphic-image--hidden {
-    opacity: 0;
   }
 </style>
