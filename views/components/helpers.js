@@ -1,15 +1,15 @@
-function getImageUrl(image, width, format, imageServiceUrl) {
+function getImageUrl(image, width, imageServiceUrl) {
   return `${imageServiceUrl
     .replace("{key}", image.key)
     .replace("{width}", width)
-    .replace("{format}", format)}&auto=webp`;
+    .replace("{format}", "pjpg")}&auto=webp`;
 }
 
 export function getImageUrls(image, width, imageServiceUrl) {
   return {
-    image1x: getImageUrl(image, width, "png", imageServiceUrl),
-    image2x: getImageUrl(image, width * 2, "png", imageServiceUrl),
-    image3x: getImageUrl(image, width * 3, "png", imageServiceUrl),
-    image4x: getImageUrl(image, width * 4, "png", imageServiceUrl),
+    image1x: getImageUrl(image, width, imageServiceUrl),
+    image2x: getImageUrl(image, width * 2, imageServiceUrl),
+    image3x: getImageUrl(image, width * 3, imageServiceUrl),
+    image4x: getImageUrl(image, width * 4, imageServiceUrl),
   };
 }
