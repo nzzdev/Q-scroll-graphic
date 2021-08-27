@@ -67,7 +67,8 @@
   }
 
   .q-scroll-graphic-content {
-    width: 100%;
+    /* On Safari the textbox will not fully cover the image without the extra pixel */
+    width: calc(100% + 1px);
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: none;
 
