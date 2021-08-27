@@ -155,6 +155,8 @@
   }
 
   .q-scroll-graphic-image--hidden {
-    display: none;
+    visibility: hidden;
+    /* On Safari the image will flicker without z-index: 1 */
+    z-index: 1;
   }
 </style>
