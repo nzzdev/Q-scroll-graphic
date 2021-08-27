@@ -17,6 +17,31 @@
         "placeholder": "Der Untertitel benennt präzise, was in der Grafik zu sehen ist, inklusive Einheiten&#46;"
       }
     },
+    "highlightedTextColors": {
+      "title": "Hervorhebungsfarben",
+      "type": "array",
+      "Q:options": {
+        "layout": "compact",
+        "expandable": {
+          "itemLabelProperty": "color"
+        }
+      },
+      "items": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "title": "Farbe",
+            "type": "string",
+            "Q:type": "color"
+          }
+        }
+      },
+      "default": [
+        {
+          "color": "#05032d"
+        }
+      ]
+    },
     "steps": {
       "title": "Schritte",
       "type": "array",
@@ -127,26 +152,6 @@
                 "asset": {}
               }
             ]
-          }
-        }
-      }
-    },
-    "highlightedTextColors": {
-      "title": "Hervorhebungsfarben",
-      "type": "array",
-      "Q:options": {
-        "layout": "compact",
-        "expandable": {
-          "itemLabelProperty": "color"
-        }
-      },
-      "items": {
-        "type": "object",
-        "properties": {
-          "color": {
-            "title": "Farbe",
-            "type": "string",
-            "Q:type": "color"
           }
         }
       }
