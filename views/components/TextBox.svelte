@@ -8,30 +8,32 @@
 
   function getHighlightedText(step) {
     for (let highlightedText of step.highlightedTexts) {
-      let textReplacement = "";
-      let text = highlightedText.text;
+      if (highlightedText.text && highlightedText.text !== "") {
+        let textReplacement = "";
+        let text = highlightedText.text;
 
-      if (highlightedText.preventLineBreak) {
-        text = text.replace(/ /g, "&nbsp;");
-      }
-
-      const highlightedTextColor =
-        item.highlightedTextColors[highlightedText.color].color;
-
-      if (highlightedText.type === "background") {
-        const backgroundColor = new TinyColor(highlightedTextColor);
-        let textColor = "#ffffff";
-        if (backgroundColor.isValid) {
-          textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+        if (highlightedText.preventLineBreak) {
+          text = text.replace(/ /g, "&nbsp;");
         }
-        textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
-      } else if (highlightedText.type === "underline") {
-        textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedTextColor};">${text}</u>`;
-      } else if (highlightedText.type === "bold") {
-        textReplacement = `<b style="color: ${highlightedTextColor}">${text}</b>`;
-      }
 
-      step.text = step.text.replace(highlightedText.text, textReplacement);
+        const highlightedTextColor =
+          item.highlightedTextColors[highlightedText.color].color;
+
+        if (highlightedText.type === "background") {
+          const backgroundColor = new TinyColor(highlightedTextColor);
+          let textColor = "#ffffff";
+          if (backgroundColor.isValid) {
+            textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+          }
+          textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
+        } else if (highlightedText.type === "underline") {
+          textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedTextColor};">${text}</u>`;
+        } else if (highlightedText.type === "bold") {
+          textReplacement = `<b style="color: ${highlightedTextColor}">${text}</b>`;
+        }
+
+        step.text = step.text.replace(highlightedText.text, textReplacement);
+      }
     }
 
     return step.text;
