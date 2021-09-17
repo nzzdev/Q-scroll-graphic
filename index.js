@@ -3,9 +3,6 @@ const Joi = require("joi");
 
 const server = Hapi.server({
   port: process.env.PORT || 3000,
-  routes: {
-    cors: true,
-  },
 });
 server.validator(Joi);
 
