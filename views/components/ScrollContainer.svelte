@@ -43,20 +43,7 @@
   $: {
     aspectRatio = images[index].width / images[index].height;
     imageHeight = containerWidth / aspectRatio;
-    if (variant === "small") {
-      // set 90px distance to top on mobile
-      top = 90;
-    } else {
-      // if the vertical center is smaller than 90px set distance to top to account for header
-      // else set distance to top to vertical center
-      const verticalCenter = windowHeight / 2 - imageHeight / 2;
-      if (verticalCenter < 90) {
-        top = 90;
-      } else {
-        top = verticalCenter;
-      }
-    }
-
+    top = windowHeight / 2 - imageHeight / 2;
     bottom = top + imageHeight;
 
     if (imageHeight > windowHeight - top) {
