@@ -99,7 +99,10 @@
       {#each imageUrlsReverse as { id, image }}
         {#if image && [index - 1, index, index + 1].includes(id)}
           <img
-            class="q-scroll-graphic-image"
+            class="q-scroll-graphic-image 
+            {item.transitionAnimation
+              ? 'q-scroll-graphic-image--transition-animation'
+              : ''}"
             class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
               windowHeight - top}
             class:q-scroll-graphic-image--vertical-fit={imageHeight >
@@ -134,6 +137,8 @@
   .q-scroll-graphic-image {
     position: absolute;
     background: currentColor;
+    visibility: visible;
+    opacity: 1;
   }
 
   .q-scroll-graphic-image--horizontal-fit {
@@ -148,7 +153,12 @@
 
   .q-scroll-graphic-image--hidden {
     visibility: hidden;
+    opacity: 0;
     /* On Safari the image will flicker without z-index: 1 */
     z-index: 1;
+  }
+
+  .q-scroll-graphic-image--transition-animation {
+    transition: visibility 0.35s ease-out, opacity 0.35s ease-out;
   }
 </style>
