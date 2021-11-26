@@ -42,6 +42,11 @@
         }
       ]
     },
+    "transitionAnimation": {
+      "title": "Überblendungsanimation",
+      "type": "boolean",
+      "default": false
+    },
     "steps": {
       "title": "Schritte",
       "type": "array",
