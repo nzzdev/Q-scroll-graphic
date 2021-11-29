@@ -37,12 +37,23 @@
     top,
     bottom,
     aspectRatio,
+    previousAspectRatio,
+    nextAspectRatio,
     imageHeight,
     paddingBottom;
 
   $: {
     aspectRatio = images[index].width / images[index].height;
+    previousAspectRatio =
+      index !== 0
+        ? images[index - 1].width / images[index - 1].height
+        : undefined;
+    nextAspectRatio =
+      images.length - 1 > index
+        ? images[index + 1].width / images[index + 1].height
+        : undefined;
     imageHeight = containerWidth / aspectRatio;
+
     if (variant === "small") {
       // set 90px distance to top on mobile
       top = 90;
@@ -73,6 +84,16 @@
   });
 
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
+
+  function isPreviousImg(i, index, imgArrayLength) {
+    const iReversed = Math.abs(i - (imgArrayLength - 1));
+    return index - 1 === iReversed;
+  }
+
+  function isNextImg(i, index, imgArrayLength) {
+    const iReversed = Math.abs(i - (imgArrayLength - 1));
+    return index + 1 === iReversed;
+  }
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />
@@ -96,13 +117,20 @@
               Image n+1 is below and becomes visible
               => smooth transition n to n+1
       -->
-      {#each imageUrlsReverse as { id, image }}
+      {#each imageUrlsReverse as { id, image }, i}
         {#if image && [index - 1, index, index + 1].includes(id)}
+          <!-- 
+            Fade out animation is skipped if the appearing image has not the same aspect ratio.
+            Otherwise the fading image changes dimensions because it applies the updated 'imageHeight' of the appearing image.
+          -->
           <img
-            class="q-scroll-graphic-image 
-            {item.transitionAnimation
-              ? 'q-scroll-graphic-image--transition-animation'
-              : ''}"
+            class="q-scroll-graphic-image"
+            class:q-scroll-graphic-image--transition-animation={item.transitionAnimation}
+            class:q-scroll-graphic-image--skip-fading-transition-animation={item.transitionAnimation &&
+              ((isPreviousImg(i, index, imageUrlsReverse.length) &&
+                aspectRatio !== previousAspectRatio) ||
+                (isNextImg(i, index, imageUrlsReverse.length) &&
+                  aspectRatio !== nextAspectRatio))}
             class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
               windowHeight - top}
             class:q-scroll-graphic-image--vertical-fit={imageHeight >
@@ -160,5 +188,9 @@
 
   .q-scroll-graphic-image--transition-animation {
     transition: visibility 0.35s ease-out, opacity 0.35s ease-out;
+  }
+
+  .q-scroll-graphic-image--hidden.q-scroll-graphic-image--skip-fading-transition-animation {
+    transition: visibility 0s, opacity 0s;
   }
 </style>
