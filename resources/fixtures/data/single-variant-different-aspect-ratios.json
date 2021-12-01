@@ -109,7 +109,7 @@
       ]
     }
   ],
-  "transitionAnimation": true,
+  "transitionAnimation": false,
   "sources": [
     {
       "link": {},
