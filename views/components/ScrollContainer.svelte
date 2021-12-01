@@ -133,7 +133,8 @@
           -->
           <img
             class="q-scroll-graphic-image"
-            class:q-scroll-graphic-image--transition-animation={item.transitionAnimation}
+            class:q-scroll-graphic-image--transition-animation={item.transitionAnimation ===
+              undefined || item.transitionAnimation}
             class:q-scroll-graphic-image--fade-in-transition-animation={item.transitionAnimation &&
               aspectRatioChanges(i, index, imageUrlsReverse.length)}
             class:q-scroll-graphic-image--horizontal-fit={imageHeight <=
