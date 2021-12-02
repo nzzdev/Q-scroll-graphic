@@ -85,15 +85,23 @@
     const isPreviousImg = index - 1 === svelteLoopIndexReversed;
     const isCurrentImg = index === svelteLoopIndexReversed;
     const isNextImg = index + 1 === svelteLoopIndexReversed;
+    const comparableAspectRatios = {
+      previous: Math.round(previousAspectRatio * 10000),
+      current: Math.round(aspectRatio * 10000),
+      next: Math.round(nextAspectRatio * 10000),
+    };
 
     if (isPreviousImg) {
-      return aspectRatio !== previousAspectRatio;
+      return comparableAspectRatios.current !== comparableAspectRatios.previous;
     } else if (isCurrentImg) {
       return (
-        aspectRatio !== previousAspectRatio || aspectRatio !== nextAspectRatio
+        (comparableAspectRatios.previous &&
+          comparableAspectRatios.current !== comparableAspectRatios.previous) ||
+        (comparableAspectRatios.next &&
+          comparableAspectRatios.current !== comparableAspectRatios.next)
       );
     } else if (isNextImg) {
-      return aspectRatio !== nextAspectRatio;
+      return comparableAspectRatios.current !== comparableAspectRatios.next;
     }
   }
 </script>
