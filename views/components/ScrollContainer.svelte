@@ -85,11 +85,13 @@
   $: imageUrlsReverse = imageUrls.map((image, id) => ({ id, image })).reverse();
 
   // Asserts if adjacent image(s) have different aspect ratio
-  function aspectRatioChanges(i, index, imgArrayLength) {
-    const iReversed = Math.abs(i - (imgArrayLength - 1));
-    const isPreviousImg = index - 1 === iReversed;
-    const isCurrentImg = index === iReversed;
-    const isNextImg = index + 1 === iReversed;
+  function aspectRatioChanges(svelteLoopIndex, index, imgArrayLength) {
+    const svelteLoopIndexReversed = Math.abs(
+      svelteLoopIndex - (imgArrayLength - 1)
+    );
+    const isPreviousImg = index - 1 === svelteLoopIndexReversed;
+    const isCurrentImg = index === svelteLoopIndexReversed;
+    const isNextImg = index + 1 === svelteLoopIndexReversed;
 
     if (isPreviousImg) {
       return aspectRatio !== previousAspectRatio;
