@@ -43,7 +43,14 @@
   $: {
     aspectRatio = images[index].width / images[index].height;
     imageHeight = containerWidth / aspectRatio;
-    top = windowHeight / 2 - imageHeight / 2;
+    // if the vertical center is smaller than 90px set distance to top to account for header
+    // else set distance to top to vertical center
+    const verticalCenter = windowHeight / 2 - imageHeight / 2;
+    if (verticalCenter < 90) {
+      top = 90;
+    } else {
+      top = verticalCenter;
+    }
     bottom = top + imageHeight;
 
     if (imageHeight > windowHeight - top) {
