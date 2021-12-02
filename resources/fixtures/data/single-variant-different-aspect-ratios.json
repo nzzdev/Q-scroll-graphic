@@ -109,7 +109,6 @@
       ]
     }
   ],
-  "transitionAnimation": false,
   "sources": [
     {
       "link": {},
@@ -124,5 +123,8 @@
       "text": "OSM"
     }
   ],
-  "notes": "Anmerkung"
+  "notes": "Anmerkung",
+  "options": {
+    "enableAnimation": false
+  }
 }

@@ -42,11 +42,6 @@
         }
       ]
     },
-    "transitionAnimation": {
-      "title": "Überblendungsanimation",
-      "type": "boolean",
-      "default": false
-    },
     "steps": {
       "title": "Schritte",
       "type": "array",
@@ -202,6 +197,17 @@
     "notes": {
       "title": "Anmerkungen",
       "type": "string"
+    }
+  },
+  "options": {
+    "title": "Optionen",
+    "type": "object",
+    "properties": {
+      "enableAnimation": {
+        "title": "Überblendung aktivieren",
+        "type": "boolean",
+        "default": false
+      }
     }
   },
   "required": ["title"]

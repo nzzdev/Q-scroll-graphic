@@ -197,7 +197,6 @@
       "color": "#0C1E8D"
     }
   ],
-  "transitionAnimation": true,
   "sources": [
     {
       "link": {},
@@ -212,5 +211,8 @@
       "text": "OSM"
     }
   ],
-  "notes": "Anmerkung"
+  "notes": "Anmerkung",
+  "options": {
+    "enableAnimation": true
+  }
 }
