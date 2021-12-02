@@ -5,6 +5,10 @@
   export let item;
   export let imageServiceUrl;
 
+  if (!item.options) {
+    item.options = {};
+  }
+
   let containerWidth;
 </script>
 

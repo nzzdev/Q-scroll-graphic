@@ -4,6 +4,8 @@ const fixtureDataDirectory = "../../resources/fixtures/data";
 // has to be in sync with files created in build task - see ../../tasks/build.js
 const fixtureData = [
   require(`${fixtureDataDirectory}/two-variants-highlighted-text.json`),
+  require(`${fixtureDataDirectory}/single-variant-different-aspect-ratios.json`),
+  require(`${fixtureDataDirectory}/mixed-variant-mixed-aspect-ratios.json`),
 ];
 
 module.exports = {
