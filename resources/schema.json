@@ -197,16 +197,16 @@
     "notes": {
       "title": "Anmerkungen",
       "type": "string"
-    }
-  },
-  "options": {
-    "title": "Optionen",
-    "type": "object",
-    "properties": {
-      "disableAnimation": {
-        "title": "Überblendung deaktivieren",
-        "type": "boolean",
-        "default": false
+    },
+    "options": {
+      "title": "Optionen",
+      "type": "object",
+      "properties": {
+        "disableAnimation": {
+          "title": "Überblendung deaktivieren",
+          "type": "boolean",
+          "default": false
+        }
       }
     }
   },
