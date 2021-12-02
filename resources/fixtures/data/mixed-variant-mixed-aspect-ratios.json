@@ -1,6 +1,6 @@
 {
   "title": "FIXTURE: Mixed variant with mixed aspect ratios",
-  "subtitle": "Contains two graphics with same aspect ratios, two variants, highlighted text & transition animations",
+  "subtitle": "Contains two graphics with same aspect ratios, two variants, highlighted text",
   "acronym": "gra.",
   "steps": [
     {
@@ -213,6 +213,6 @@
   ],
   "notes": "Anmerkung",
   "options": {
-    "enableAnimation": true
+    "disableAnimation": false
   }
 }

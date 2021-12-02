@@ -203,8 +203,8 @@
     "title": "Optionen",
     "type": "object",
     "properties": {
-      "enableAnimation": {
-        "title": "Überblendung aktivieren",
+      "disableAnimation": {
+        "title": "Überblendung deaktivieren",
         "type": "boolean",
         "default": false
       }

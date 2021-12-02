@@ -1,6 +1,6 @@
 {
   "title": "FIXTURE: Two variants per step and highlighted text",
-  "subtitle": "with animated transitions",
+  "subtitle": "Subtitle",
   "acronym": "mrt.",
   "steps": [
     {
@@ -278,6 +278,6 @@
   ],
   "notes": "Anmerkung",
   "options": {
-    "enableAnimation": true
+    "disableAnimation": false
   }
 }
