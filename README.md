@@ -135,6 +135,20 @@ A scroll graphic consists of multiple steps. Each step has multiple graphic vari
 
 [to the top](#table-of-contents)
 
+### Options
+
+#### disableAnimation
+
+This is a `boolean` and it can be used to disable the animation effect when switching between images.
+
+#### displayOptions
+
+##### hideTitle
+
+If checked, the title is not rendered.
+
+[to the top](#table-of-contents)
+
 ## License
 
 Copyright (c) Neue Zürcher Zeitung. All rights reserved.
