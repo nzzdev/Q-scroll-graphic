@@ -1,6 +1,6 @@
 # Q-scroll-graphic [![Build Status](https://travis-ci.com/nzzdev/Q-scroll-graphic.svg?branch=dev)](https://travis-ci.com/nzzdev/Q-scroll-graphic)
 
-**maintainer**: [manuelroth](https://github.com/manuelroth)
+**Maintainer**: [Michel Grautstück](https://github.com/migingreen)
 
 Q scroll graphic is one tool of the Q toolbox to create a visual element where the graphic is fixed to the viewport and the text scrolls on top of the graphic. See a more details definition of a scroll graphic in [our styleguide](https://nzzdev.github.io/Storytelling-Styleguide/#/grafikabfolge).
 
@@ -132,6 +132,20 @@ A scroll graphic consists of multiple steps. Each step has multiple graphic vari
   ]
 }
 ```
+
+[to the top](#table-of-contents)
+
+### Options
+
+#### disableAnimation
+
+This is a `boolean` and it can be used to disable the animation effect when switching between images.
+
+#### displayOptions
+
+##### hideTitle
+
+If checked, the title is not rendered.
 
 [to the top](#table-of-contents)
 

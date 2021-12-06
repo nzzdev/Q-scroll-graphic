@@ -276,5 +276,8 @@
       "text": "OSM"
     }
   ],
-  "notes": "Anmerkung"
+  "notes": "Anmerkung",
+  "options": {
+    "disableAnimation": false
+  }
 }

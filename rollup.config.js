@@ -32,7 +32,7 @@ function generateHashmap() {
       if (!fs.existsSync(scriptsDir)) {
         fs.mkdirSync(scriptsDir);
       } else {
-        fs.rmdirSync(scriptsDir, { recursive: true });
+        fs.rmSync(scriptsDir, { recursive: true });
         fs.mkdirSync(scriptsDir);
       }
       writeHashmap(
@@ -64,7 +64,7 @@ export default {
         if (!fs.existsSync(stylesDir)) {
           fs.mkdirSync(stylesDir);
         } else {
-          fs.rmdirSync(stylesDir, { recursive: true });
+          fs.rmSync(stylesDir, { recursive: true });
           fs.mkdirSync(stylesDir);
         }
         fs.writeFileSync(`styles/${filename}.css`, styles);
