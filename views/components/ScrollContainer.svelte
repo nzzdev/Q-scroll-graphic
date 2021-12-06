@@ -55,7 +55,7 @@
     // if the vertical center is smaller than 90px set distance to top to account for header
     // else set distance to top to vertical center
     const verticalCenter = windowHeight / 2 - imageHeight / 2;
-    if (verticalCenter < 90) {
+    if (verticalCenter < 90 && variant === "large") {
       top = 90;
     } else {
       top = verticalCenter;
