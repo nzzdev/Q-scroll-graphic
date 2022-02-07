@@ -13,7 +13,8 @@
         let text = highlightedText.text;
 
         if (highlightedText.preventLineBreak) {
-          text = text.replace(/ /g, "&nbsp;");
+          // Prevent line break, by replacing all whitespace characters (including thin spaces)
+          text = text.replace(/\s/g, "&nbsp;");
         }
 
         const highlightedTextColor =
