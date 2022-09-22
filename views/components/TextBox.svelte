@@ -74,9 +74,7 @@
     box-shadow: none;
 
     padding-top: 17px;
-    padding-left: 24px;
     padding-bottom: 23px;
-    padding-right: 24px;
     line-height: 26px;
   }
 
