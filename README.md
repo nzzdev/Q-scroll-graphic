@@ -48,6 +48,12 @@ Run the Q tool:
 npm run dev
 ```
 
+### Environment styles
+
+Environment-specific styles are stored under: ```/resources/styles/environment.css```
+
+The purpose of this file is to have all styles, which are only applicable in a certain environment, in one place.
+
 [to the top](#table-of-contents)
 
 ## Testing
