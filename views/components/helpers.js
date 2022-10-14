@@ -1,8 +1,11 @@
 function getImageUrl(image, width, imageServiceUrl) {
-  return `${imageServiceUrl
-    .replace("{key}", image.key)
-    .replace("{width}", width)
-    .replace("{format}", "pjpg")}&auto=webp`;
+  if (imageServiceUrl)
+    return `${imageServiceUrl
+      .replace("{key}", image.key)
+      .replace("{width}", width)
+      .replace("{format}", "pjpg")}&auto=webp`;
+  else
+    return image.url
 }
 
 export function getImageUrls(image, width, imageServiceUrl) {
