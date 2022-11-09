@@ -61,7 +61,9 @@
   }
 
   const setSectionTextCSSVars = (step) => {
-    const sectionTextOption = item.sectionText.sectionTextBackground;
+    let sectionTextOption;
+    if (item.sectionText && item.sectionText.sectionTextBackground)
+      sectionTextOption = item.sectionText.sectionTextBackground;
     let backgroundColor = BACKGROUND.white;
     let textColor = TEXT_COLOR.black;
     let textShadow = TEXT_SHADOW.none;
@@ -103,7 +105,6 @@
         const alpha =
           colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
         boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
-
         break;
       }
     }
