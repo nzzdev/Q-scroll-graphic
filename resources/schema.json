@@ -42,6 +42,89 @@
         }
       ]
     },
+    "textSection": {
+      "type": "object",
+      "properties": {
+        "textSectionBackground": {
+          "title": "Hintergrundfarbe von Textboxen",
+          "type": "string",
+          "enum": ["white", "transparentWhite", "transparentBlack", "custom"],
+          "default": "white",
+          "Q:options": {
+            "selectType": "radio",
+            "enum_titles": [
+              "Weiss",
+              "Transparent mit weisser Schrift",
+              "Transparent mit schwarzer Schrift",
+              "Benutzerdefiniert"
+            ]
+          }
+        },
+        "custom": {
+          "type": "object",
+          "properties": {
+            "textBackgroundColor": {
+              "title": "RGBA-Wert (z.B. rgba(255,255,255,0.5))",
+              "type": "string",
+              "Q:options": {
+                "notificationChecks": [
+                  {
+                    "type": "ToolEndpoint",
+                    "config": {
+                      "endpoint": "notification/shouldBeRgba",
+                      "fields": ["textSection.custom"]
+                    },
+                    "priority": {
+                      "type": "high",
+                      "value": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "textShadow": {
+              "title": "Textschatten",
+              "type": "string",
+              "enum": [
+                "none",
+                "0px 0px 8px rgb(255,255,255)",
+                "0px 0px 8px rgb(0,0,1)"
+              ],
+              "default": "none",
+              "Q:options": {
+                "selectType": "radio",
+                "enum_titles": [
+                  "Keiner",
+                  "Hell",
+                  "Dunkel"
+                ]
+              }
+            },
+            "textColor": {
+              "title": "Textfarbe",
+              "type": "string",
+              "enum": ["#000000", "#ffffff"],
+              "default": "#000000",
+              "Q:options": {
+                "selectType": "radio",
+                "enum_titles": ["Schwarz", "Weiss"]
+              }
+            }
+          },
+          "Q:options": {
+            "availabilityChecks": [
+              {
+                "type": "ToolEndpoint",
+                "config": {
+                  "endpoint": "option-availability/custom-text-section",
+                  "fields": ["textSection.textSectionBackground"]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
     "steps": {
       "title": "Schritte",
       "type": "array",
