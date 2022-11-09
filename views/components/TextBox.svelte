@@ -21,7 +21,7 @@
   const TEXT_SHADOW = Object.freeze({
     none: "none",
     dark: "0px 0px 8px rgb(0,0,1)",
-    light: "0px 0px 8px rgb(255,255,255)"
+    light: "0px 0px 8px rgb(255,255,255)",
   });
 
   function getHighlightedText(step) {
@@ -61,7 +61,7 @@
   }
 
   const setSectionTextCSSVars = (step) => {
-    const sectionTextOption = item.sectionText?.sectionTextBackground;
+    const sectionTextOption = item.sectionText.sectionTextBackground;
     let backgroundColor = BACKGROUND.white;
     let textColor = TEXT_COLOR.black;
     let textShadow = TEXT_SHADOW.none;
@@ -101,13 +101,13 @@
 
         const colorParts = backgroundColor.split(",");
         const alpha =
-          colorParts?.length === 4 ? parseFloat(colorParts[3]) : undefined;
+          colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
         boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
 
         break;
       }
     }
-    
+
     return `--sectionTextBackgroundColor: ${backgroundColor}; --sectionTextColor: ${textColor}; --sectionTextBoxShadow: ${boxShadow}; --sectionTextTextShadow: ${textShadow}`;
   };
 </script>
