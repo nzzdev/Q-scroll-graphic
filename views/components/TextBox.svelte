@@ -62,8 +62,8 @@
 
   const setSectionTextCSSVars = (step) => {
     let sectionTextOption;
-    if (item.sectionText && item.sectionText.textSectionBackground)
-      sectionTextOption = item.sectionText.textSectionBackground;
+    if (item.textSection && item.textSection.textSectionBackground)
+      sectionTextOption = item.textSection.textSectionBackground;
     let backgroundColor = BACKGROUND.white;
     let textColor = TEXT_COLOR.black;
     let textShadow = TEXT_SHADOW.none;
