@@ -11,9 +11,16 @@ module.exports = {
   },
   handler: function (request, h) {
     try {
-      const custom = request.payload.item?.sectionText?.custom;
+      let customTextSection;
 
-      if (!Validation.isRgbaString(custom?.textBackgroundColor))
+      if (request.payload.item && request.payload.item.textSection) {
+        customTextSection = request.payload.item.textSection.customTextSection;
+      }
+
+      if (
+        !!customTextSection &&
+        !Validation.isRgbaString(customTextSection.textBackgroundColor)
+      )
         return {
           message: {
             title: "notification.shouldBeRgba.title",
@@ -23,7 +30,6 @@ module.exports = {
 
       return null;
     } catch (error) {
-
       return null;
     }
   },
