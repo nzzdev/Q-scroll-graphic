@@ -11,15 +11,15 @@ module.exports = {
   },
   handler: function (request, h) {
     try {
-      let customTextSection;
+      let customized;
 
-      if (request.payload.item && request.payload.item.textSection) {
-        customTextSection = request.payload.item.textSection.customTextSection;
+      if (request.payload.item && request.payload.item.sectionText) {
+        customized = request.payload.item.sectionText.customized;
       }
 
       if (
-        !!customTextSection &&
-        !Validation.isRgbaString(customTextSection.textBackgroundColor)
+        !!customized &&
+        !Validation.isRgbaString(customized.textBackgroundColor)
       )
         return {
           message: {

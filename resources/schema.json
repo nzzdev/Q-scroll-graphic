@@ -42,7 +42,7 @@
         }
       ]
     },
-    "wooza": {
+    "sectionText": {
       "type": "object",
       "properties": {
         "sectionTextBackground": {
@@ -60,7 +60,7 @@
             ]
           }
         },
-        "custom": {
+        "customized": {
           "type": "object",
           "properties": {
             "textBackgroundColor": {

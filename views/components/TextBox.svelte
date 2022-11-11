@@ -85,14 +85,14 @@
         break;
       }
       case sectionTextOption === "custom": {
-        const customOptions = item.sectionText.custom;
+        const customOptions = item.sectionText.customized;
 
         if (!customOptions) break;
 
         if (
           customOptions.textBackgroundColor &&
           isRgbaString(
-            item.sectionText.custom.textBackgroundColor
+            item.sectionText.customized.textBackgroundColor
               .toLowerCase()
               .replace(/ +/g, "")
           )
