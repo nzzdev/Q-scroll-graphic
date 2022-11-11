@@ -42,10 +42,10 @@
         }
       ]
     },
-    "textSection": {
+    "wooza": {
       "type": "object",
       "properties": {
-        "textSectionBackground": {
+        "sectionTextBackground": {
           "title": "Hintergrundfarbe von Textboxen",
           "type": "string",
           "enum": ["white", "transparentWhite", "transparentBlack", "custom"],
@@ -72,7 +72,7 @@
                     "type": "ToolEndpoint",
                     "config": {
                       "endpoint": "notification/shouldBeRgba",
-                      "fields": ["textSection.custom"]
+                      "fields": ["sectionText.custom"]
                     },
                     "priority": {
                       "type": "high",
@@ -117,7 +117,7 @@
                 "type": "ToolEndpoint",
                 "config": {
                   "endpoint": "option-availability/custom-text-section",
-                  "fields": ["textSection.textSectionBackground"]
+                  "fields": ["sectionText.sectionTextBackground"]
                 }
               }
             ]

@@ -11,7 +11,7 @@ module.exports = {
   },
   handler: function (request, h) {
     try {
-      const custom = request.payload.item?.textSection?.custom;
+      const custom = request.payload.item?.sectionText?.custom;
 
       if (!Validation.isRgbaString(custom?.textBackgroundColor))
         return {

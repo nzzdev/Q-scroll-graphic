@@ -14,7 +14,7 @@ module.exports = {
 
     if (request.params.optionName === "custom-text-section") {
       return {
-        available: item.textSection.textSectionBackground === "custom",
+        available: item.sectionText.sectionTextBackground === "custom",
       };
     }
 
