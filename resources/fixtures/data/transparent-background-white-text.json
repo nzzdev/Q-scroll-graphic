@@ -1,0 +1,103 @@
+{
+  "title": "FIXTURE: Transparent Background White Text",
+  "subtitle": "Contains dark images with light writing on transparent text background",
+  "acronym": "gra.",
+  "steps": [
+    {
+      "text": "Venice, the capital of northern Italy's Veneto region, is built on more than 100 small islands in a lagoon in the Adriatic Sea. It has no roads, just canals – including the Grand Canal thoroughfare – lined with Renaissance and Gothic palaces.",
+      "variants": [
+        {
+          "asset": {
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2022/11/10/dylan-freedom-I14L_1L7LZg-unsplash-585e9e7da3f56c3d88c45e0e1cb3c95c.jpeg",
+            "key": "2022/11/10/dylan-freedom-I14L_1L7LZg-unsplash-585e9e7da3f56c3d88c45e0e1cb3c95c.jpeg",
+            "width": 2400,
+            "height": 1600,
+            "size": 634551,
+            "type": "image/jpeg"
+          }
+        }
+      ]
+    },
+    {
+      "text": "Falcon Heavy is a partially reusable heavy-lift launch vehicle that is produced by SpaceX, an American aerospace manufacturer.",
+      "variants": [
+        {
+          "asset": {
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2022/11/10/spacex-pnPS3Ox_2vE-unsplash-0745b739e1cfc22006d8f50d8f581e82.jpeg",
+            "key": "2022/11/10/spacex-pnPS3Ox_2vE-unsplash-0745b739e1cfc22006d8f50d8f581e82.jpeg",
+            "width": 3000,
+            "height": 2000,
+            "size": 74241,
+            "type": "image/jpeg"
+          }
+        }
+      ],
+      "highlightedTexts": [
+        {
+          "type": "background",
+          "preventLineBreak": false,
+          "text": "launch vehicle",
+          "color": 0
+        },
+        {
+          "type": "underline",
+          "color": 0,
+          "preventLineBreak": true,
+          "text": "SpaceX"
+        },
+        {
+          "type": "bold",
+          "color": 0,
+          "preventLineBreak": false,
+          "text": "Falcon Heavy"
+        }
+      ]
+    },
+    {
+      "text": "'Among the scenes which are deeply impressed on my mind, none exceed in sublimity the primeval forests… No one can stand in these solitudes unmoved, and not feel that there is more in man than the mere breath of his body.' – Charles Darwin",
+      "variants": [
+        {
+          "asset": {
+            "url": "https://nzz-q-assets-stage.s3.eu-west-1.amazonaws.com/2022/11/10/phoebe-strafford-EBbP0Wrbmqs-unsplash-67e77c8b22cc6953303b155513cf5215.jpeg",
+            "key": "2022/11/10/phoebe-strafford-EBbP0Wrbmqs-unsplash-67e77c8b22cc6953303b155513cf5215.jpeg",
+            "width": 3888,
+            "height": 2592,
+            "size": 1588877,
+            "type": "image/jpeg"
+          }
+        }
+      ]
+    }
+  ],
+  "highlightedTextColors": [
+    {
+      "color": "#FF6666"
+    }
+  ],
+  "sources": [
+    {
+      "link": {},
+      "text": "Dylan Freedom"
+    },
+    {
+      "link": {},
+      "text": "SpaxeX"
+    },
+    {
+      "link": {},
+      "text": "Phoebe Strafford"
+    }
+  ],
+  "notes": "Anmerkung",
+  "options": {
+    "disableAnimation": false
+  },
+  "sectionText": {
+    "sectionTextBackground": "transparentWhite",
+    "custom": {
+      "textBackgroundColor": "rgba(72, 122, 180, 0)",
+      "textShadow": null,
+      "textColor": "#ffffff"
+    }
+  }
+}
