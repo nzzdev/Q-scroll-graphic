@@ -2,3 +2,12 @@
   padding-left: 24px;
   padding-right: 24px;
 }
+
+.q-embed.widget--containerwidth .q-scroll-graphic-content {
+  padding: 18px 9px 20px;
+}
+
+.q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth)
+  .q-scroll-graphic-content {
+  padding: 18px 9px 20px;
+}
