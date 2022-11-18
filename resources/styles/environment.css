@@ -12,8 +12,8 @@
 /* For container-width on mobile: use the full width of container if box is visible */
 .q-embed.widget--containerwidth
   .q-scroll-graphic-content.q-scroll-graphic-text-box--wide {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 33px;
+  padding-right: 33px;
   width: calc(100% + 48px);
 }
 
@@ -26,7 +26,7 @@
 /* For content-width on mobile: use the full width of container if box is visible */
 .q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth)
   .q-scroll-graphic-content.q-scroll-graphic-text-box--wide {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 33px;
+  padding-right: 33px;
   width: calc(100% + 48px);
 }
