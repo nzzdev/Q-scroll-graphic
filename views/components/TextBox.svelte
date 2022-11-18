@@ -6,7 +6,7 @@
   export let maxHeight;
   export let variant;
   export let step;
-  let hasCustomNonTransparentTextbox = true;
+  let visibleTextBox = true;
   const TEXT_COLOR = Object.freeze({
     white: "#ffffff",
     black: "#000000",
@@ -77,12 +77,14 @@
         textColor = TEXT_COLOR.white;
         textShadow = TEXT_SHADOW.dark;
         boxShadow = BOX_SHADOW.none;
+        visibleTextBox = false;
         break;
       }
       case sectionTextOption === "transparentBlack": {
         backgroundColor = BACKGROUND.transparent;
         textShadow = TEXT_SHADOW.light;
         boxShadow = BOX_SHADOW.none;
+        visibleTextBox = false;
         break;
       }
       case sectionTextOption === "custom": {
@@ -103,7 +105,7 @@
         const alpha =
           colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
         boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
-        hasCustomNonTransparentTextbox = alpha > 0;
+        visibleTextBox = alpha > 0;
         break;
       }
     }
@@ -117,7 +119,7 @@
     {#if step.text && step.text !== ""}
       <p
         style={setSectionTextCSSVars(step)}
-        class:q-scroll-graphic-text-box--wide={hasCustomNonTransparentTextbox}
+        class:q-scroll-graphic-text-box--wide={visibleTextBox}
         class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
       >
         {#if step.highlightedTexts && step.highlightedTexts.length > 0}
