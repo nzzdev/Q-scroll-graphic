@@ -6,6 +6,7 @@
   export let maxHeight;
   export let variant;
   export let step;
+  let hasCustomNonTransparentTextbox = true;
   const TEXT_COLOR = Object.freeze({
     white: "#ffffff",
     black: "#000000",
@@ -102,6 +103,7 @@
         const alpha =
           colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
         boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
+        hasCustomNonTransparentTextbox = alpha > 0;
         break;
       }
     }
@@ -115,6 +117,7 @@
     {#if step.text && step.text !== ""}
       <p
         style={setSectionTextCSSVars(step)}
+        class:q-scroll-graphic-text-box--wide={hasCustomNonTransparentTextbox}
         class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
       >
         {#if step.highlightedTexts && step.highlightedTexts.length > 0}

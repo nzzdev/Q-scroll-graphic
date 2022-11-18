@@ -7,7 +7,7 @@
   padding: 18px 9px 20px;
 }
 
-.q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth)
+.q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth, .q-scroll-graphic-text-box--wide)
   .q-scroll-graphic-content {
   padding: 18px 9px 20px;
 }
