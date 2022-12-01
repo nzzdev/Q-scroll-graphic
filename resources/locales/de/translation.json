@@ -1,1 +1,8 @@
-{}
+{
+  "notification": {
+    "shouldBeRgba": {
+      "title": "RGBA Wert korrekt?",
+      "body": "Der eingetragene Wert wurde nicht als RGBA erkannt."
+    }
+  }
+}

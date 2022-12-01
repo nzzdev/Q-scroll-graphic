@@ -1,10 +1,29 @@
 <script>
   import { TinyColor } from "@ctrl/tinycolor";
+  import { isRgbaString } from "@nzz/et-utils-validation";
 
   export let item;
   export let maxHeight;
   export let variant;
   export let step;
+  let visibleTextBox = true;
+  const TEXT_COLOR = Object.freeze({
+    white: "#ffffff",
+    black: "#000000",
+  });
+  const BACKGROUND = Object.freeze({
+    white: "rgba(255, 255, 255, 0.9)",
+    transparent: "rgba(0, 0, 0, 0)",
+  });
+  const BOX_SHADOW = Object.freeze({
+    shadow: "rgba(0, 0, 0, 0.3)",
+    none: "none",
+  });
+  const TEXT_SHADOW = Object.freeze({
+    none: "none",
+    dark: "0px 0px 8px rgb(0,0,1)",
+    light: "0px 0px 8px rgb(255,255,255)",
+  });
 
   function getHighlightedText(step) {
     for (let highlightedText of step.highlightedTexts) {
@@ -22,9 +41,11 @@
 
         if (highlightedText.type === "background") {
           const backgroundColor = new TinyColor(highlightedTextColor);
-          let textColor = "#ffffff";
+          let textColor = TEXT_COLOR.white;
           if (backgroundColor.isValid) {
-            textColor = backgroundColor.isLight() ? "#000000" : "#ffffff";
+            textColor = backgroundColor.isLight()
+              ? TEXT_COLOR.Black
+              : TEXT_COLOR.white;
           }
           textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
         } else if (highlightedText.type === "underline") {
@@ -39,12 +60,66 @@
 
     return step.text;
   }
+
+  const setSectionTextCSSVars = (step) => {
+    let sectionTextOption;
+    if (item.sectionText && item.sectionText.sectionTextBackground)
+      sectionTextOption = item.sectionText.sectionTextBackground;
+
+    let backgroundColor = BACKGROUND.white;
+    let textColor = TEXT_COLOR.black;
+    let textShadow = TEXT_SHADOW.none;
+    let boxShadow = BOX_SHADOW.shadow;
+
+    switch (true) {
+      case sectionTextOption === "transparentWhite": {
+        backgroundColor = BACKGROUND.transparent;
+        textColor = TEXT_COLOR.white;
+        textShadow = TEXT_SHADOW.dark;
+        boxShadow = BOX_SHADOW.none;
+        visibleTextBox = false;
+        break;
+      }
+      case sectionTextOption === "transparentBlack": {
+        backgroundColor = BACKGROUND.transparent;
+        textShadow = TEXT_SHADOW.light;
+        boxShadow = BOX_SHADOW.none;
+        visibleTextBox = false;
+        break;
+      }
+      case sectionTextOption === "custom": {
+        const customOptions = item.sectionText.customized;
+
+        if (!customOptions) break;
+
+        if (
+          customOptions.textBackgroundColor &&
+          isRgbaString(item.sectionText.customized.textBackgroundColor)
+        )
+          backgroundColor = customOptions.textBackgroundColor;
+
+        if (customOptions.textShadow) textShadow = customOptions.textShadow;
+        if (customOptions.textColor) textColor = customOptions.textColor;
+
+        const colorParts = backgroundColor.split(",");
+        const alpha =
+          colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
+        boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
+        visibleTextBox = alpha > 0;
+        break;
+      }
+    }
+
+    return `--sectionTextBackgroundColor: ${backgroundColor}; --sectionTextColor: ${textColor}; --sectionTextBoxShadow: ${boxShadow}; --sectionTextTextShadow: ${textShadow}`;
+  };
 </script>
 
 <section>
   <div class="q-scroll-graphic-text-box">
     {#if step.text && step.text !== ""}
       <p
+        style={setSectionTextCSSVars(step)}
+        class:q-scroll-graphic-text-box--wide={visibleTextBox}
         class="s-font-text-s q-scroll-graphic-content q-scroll-graphic-content--{variant}"
       >
         {#if step.highlightedTexts && step.highlightedTexts.length > 0}
@@ -70,7 +145,9 @@
   .q-scroll-graphic-content {
     /* On Safari the textbox will not fully cover the image without the extra pixel */
     width: calc(100% + 1px);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--sectionTextBackgroundColor);
+    color: var(--sectionTextColor);
+    text-shadow: var(--sectionTextTextShadow);
     box-shadow: none;
 
     padding-top: 17px;
@@ -82,7 +159,7 @@
     max-width: 400px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px var(--sectionTextBoxShadow);
     text-align: center;
   }
 

@@ -2,3 +2,31 @@
   padding-left: 24px;
   padding-right: 24px;
 }
+
+/* For container-width on mobile: add extra padding if box is transparent */
+.q-embed.widget--containerwidth
+  .q-scroll-graphic-content:not(.q-scroll-graphic-text-box--wide) {
+  padding: 18px 9px 20px;
+}
+
+/* For container-width on mobile: use the full width of container if box is visible */
+.q-embed.widget--containerwidth
+  .q-scroll-graphic-content.q-scroll-graphic-text-box--wide {
+  padding-left: 33px;
+  padding-right: 33px;
+  width: calc(100% + 48px);
+}
+
+/* For content-width on mobile: add extra padding if box is transparent */
+.q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth)
+  .q-scroll-graphic-content:not(.q-scroll-graphic-text-box--wide) {
+  padding: 18px 9px 20px;
+}
+
+/* For content-width on mobile: use the full width of container if box is visible */
+.q-embed.widget--qembed:not(.widget--right, .widget--left, .widget--fullwidth, .widget--containerwidth)
+  .q-scroll-graphic-content.q-scroll-graphic-text-box--wide {
+  padding-left: 33px;
+  padding-right: 33px;
+  width: calc(100% + 48px);
+}

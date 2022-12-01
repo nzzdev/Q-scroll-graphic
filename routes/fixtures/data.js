@@ -6,6 +6,7 @@ const fixtureData = [
   require(`${fixtureDataDirectory}/two-variants-highlighted-text.json`),
   require(`${fixtureDataDirectory}/single-variant-different-aspect-ratios.json`),
   require(`${fixtureDataDirectory}/mixed-variant-mixed-aspect-ratios.json`),
+  require(`${fixtureDataDirectory}/transparent-background-white-text.json`),
 ];
 
 module.exports = {
