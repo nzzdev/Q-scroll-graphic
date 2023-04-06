@@ -19,10 +19,7 @@
                 rel="noopener noreferrer"
               >
                 {source.text}
-              </a>
-              {#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
-                ,&nbsp;
-              {/if}
+              </a>{#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""},&nbsp;{/if}
             {:else if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
               {source.text},&nbsp;
             {:else}
