@@ -13,13 +13,9 @@
         {#each item.sources as source, index}
           {#if source.text !== ""}
             {#if source.link && source.link.url && source.link.isValid}
-              <a
-                href={source.link.url}
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                {source.text}
-              </a>{#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""},&nbsp;{/if}
+              <a href={source.link.url} target="blank" rel="noopener noreferrer"
+                >{source.text}</a
+              >{#if index !== item.sources.length - 1 && item.sources[index + 1] !== ""},&nbsp;{/if}
             {:else if index !== item.sources.length - 1 && item.sources[index + 1] !== ""}
               {source.text},&nbsp;
             {:else}
