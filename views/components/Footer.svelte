@@ -4,7 +4,7 @@
 
 <div class="s-q-item__footer">
   {#if item.notes}
-    <div class="s-q-item__footer__notes">{item.notes}</div>
+    <div class="s-q-item__footer__notes">{@html item.notes}</div>
   {/if}
   <div class="s-q-item__footer__details">
     {#if item.sources && item.sources.length > 0}
