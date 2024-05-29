@@ -1,6 +1,6 @@
 <script>
-  import { TinyColor } from "@ctrl/tinycolor";
-  import { isRgbaString } from "@nzz/et-utils-validation";
+  import { TinyColor } from '@ctrl/tinycolor';
+  import { isRgbaString } from '@nzz/et-utils-validation';
 
   export let item;
   export let maxHeight;
@@ -8,49 +8,50 @@
   export let step;
   let visibleTextBox = true;
   const TEXT_COLOR = Object.freeze({
-    white: "#ffffff",
-    black: "#000000",
+    white: '#ffffff',
+    black: '#000000',
   });
   const BACKGROUND = Object.freeze({
-    white: "rgba(255, 255, 255, 0.9)",
-    transparent: "rgba(0, 0, 0, 0)",
+    white: 'rgba(255, 255, 255, 0.9)',
+    transparent: 'rgba(0, 0, 0, 0)',
   });
   const BOX_SHADOW = Object.freeze({
-    shadow: "rgba(0, 0, 0, 0.3)",
-    none: "none",
+    shadow: 'rgba(0, 0, 0, 0.3)',
+    none: 'none',
   });
   const TEXT_SHADOW = Object.freeze({
-    none: "none",
-    dark: "0px 0px 8px rgb(0,0,1)",
-    light: "0px 0px 8px rgb(255,255,255)",
+    none: 'none',
+    dark: '0px 0px 8px rgb(0,0,1)',
+    light: '0px 0px 8px rgb(255,255,255)',
   });
 
   function getHighlightedText(step) {
     for (let highlightedText of step.highlightedTexts) {
-      if (highlightedText.text && highlightedText.text !== "") {
-        let textReplacement = "";
+      if (highlightedText.text && highlightedText.text !== '') {
+        let textReplacement = '';
         let text = highlightedText.text;
 
         if (highlightedText.preventLineBreak) {
           // Prevent line break, by replacing all whitespace characters (including thin spaces)
-          text = text.replace(/\s/g, "&nbsp;");
+          text = text.replace(/\s/g, '&nbsp;');
         }
 
-        const highlightedTextColor =
-          item.highlightedTextColors[highlightedText.color].color;
+        let highlightedTextColor = undefined;
 
-        if (highlightedText.type === "background") {
+        if (item.highlightedTextColors[highlightedText.color]) {
+          highlightedTextColor = item.highlightedTextColors[highlightedText.color].color;
+        }
+
+        if (highlightedText.type === 'background') {
           const backgroundColor = new TinyColor(highlightedTextColor);
           let textColor = TEXT_COLOR.white;
           if (backgroundColor.isValid) {
-            textColor = backgroundColor.isLight()
-              ? TEXT_COLOR.Black
-              : TEXT_COLOR.white;
+            textColor = backgroundColor.isLight() ? TEXT_COLOR.Black : TEXT_COLOR.white;
           }
           textReplacement = `<span class="q-scroll-graphic-content--background" style="background-color: ${backgroundColor.toString()}; color: ${textColor};">${text}</span>`;
-        } else if (highlightedText.type === "underline") {
+        } else if (highlightedText.type === 'underline') {
           textReplacement = `<u class="q-scroll-graphic-content--underline" style="text-decoration-color: ${highlightedTextColor};">${text}</u>`;
-        } else if (highlightedText.type === "bold") {
+        } else if (highlightedText.type === 'bold') {
           textReplacement = `<b style="color: ${highlightedTextColor}">${text}</b>`;
         }
 
@@ -61,7 +62,7 @@
     return step.text;
   }
 
-  const setSectionTextCSSVars = (step) => {
+  const setSectionTextCSSVars = step => {
     let sectionTextOption;
     if (item.sectionText && item.sectionText.sectionTextBackground)
       sectionTextOption = item.sectionText.sectionTextBackground;
@@ -72,7 +73,7 @@
     let boxShadow = BOX_SHADOW.shadow;
 
     switch (true) {
-      case sectionTextOption === "transparentWhite": {
+      case sectionTextOption === 'transparentWhite': {
         backgroundColor = BACKGROUND.transparent;
         textColor = TEXT_COLOR.white;
         textShadow = TEXT_SHADOW.dark;
@@ -80,30 +81,26 @@
         visibleTextBox = false;
         break;
       }
-      case sectionTextOption === "transparentBlack": {
+      case sectionTextOption === 'transparentBlack': {
         backgroundColor = BACKGROUND.transparent;
         textShadow = TEXT_SHADOW.light;
         boxShadow = BOX_SHADOW.none;
         visibleTextBox = false;
         break;
       }
-      case sectionTextOption === "custom": {
+      case sectionTextOption === 'custom': {
         const customOptions = item.sectionText.customized;
 
         if (!customOptions) break;
 
-        if (
-          customOptions.textBackgroundColor &&
-          isRgbaString(item.sectionText.customized.textBackgroundColor)
-        )
+        if (customOptions.textBackgroundColor && isRgbaString(item.sectionText.customized.textBackgroundColor))
           backgroundColor = customOptions.textBackgroundColor;
 
         if (customOptions.textShadow) textShadow = customOptions.textShadow;
         if (customOptions.textColor) textColor = customOptions.textColor;
 
-        const colorParts = backgroundColor.split(",");
-        const alpha =
-          colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
+        const colorParts = backgroundColor.split(',');
+        const alpha = colorParts.length === 4 ? parseFloat(colorParts[3]) : undefined;
         boxShadow = alpha === 0 ? BOX_SHADOW.none : BOX_SHADOW.shadow;
         visibleTextBox = alpha > 0;
         break;
@@ -116,7 +113,7 @@
 
 <section>
   <div class="q-scroll-graphic-text-box">
-    {#if step.text && step.text !== ""}
+    {#if step.text && step.text !== ''}
       <p
         style={setSectionTextCSSVars(step)}
         class:q-scroll-graphic-text-box--wide={visibleTextBox}
